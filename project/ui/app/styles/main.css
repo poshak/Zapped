@@ -17,6 +17,14 @@ body {
   padding-right: 15px;
 }
 
+.footer-class{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -39,6 +47,12 @@ body {
 
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+.mevamasala{
+  font-family: monospace;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 /* Main marketing message and sign up button */

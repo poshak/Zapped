@@ -8,26 +8,31 @@
  *
  * Main module of the application.
  */
-angular
-  .module('uiApp', [
+var app = angular
+  .module('app', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+    'ngTouch',
+      'pascalprecht.translate'
+  ]);
+app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
+//routing
+    $stateProvider
+      .state('home', {
+        url: "/home",
+        templateUrl: "home/home.html",
+        controller : 'HomeCtrl'
       });
+  $urlRouterProvider.otherwise("/home");
+
+  //translate
+  $translateProvider.translations('en', {
+    "PRODUCT_NAME":"Meva Masala",
+    "Tagline":"The Secret Ingredient"
+  });
+  $translateProvider.preferredLanguage('en');
+  $translateProvider.useSanitizeValueStrategy('escaped');
   });
