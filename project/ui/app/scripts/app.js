@@ -22,16 +22,16 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
 //routing
     $stateProvider
       .state('home', {
-        url: "/home",
-        templateUrl: "home/home.html",
+        url: '/home',
+        templateUrl: 'home/home.html',
         controller : 'HomeCtrl'
       });
-  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise('/home');
 
   //translate
   $translateProvider.translations('en', {
-    "PRODUCT_NAME":"Meva Masala",
-    "Tagline":"The Secret Ingredient"
+    'PRODUCT_NAME':'Meva Masala',
+    'Tagline':'The Secret Ingredient'
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.useSanitizeValueStrategy('escaped');
