@@ -144,6 +144,18 @@ body {
   -webkit-transform: perspective( 900px ) rotateY( 0deg );
 }
 
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .card:hover > .front{
+    /*transform: perspective( 900px ) rotateY( -180deg );*/
+    /*-webkit-transform: perspective( 900px ) rotateY( -180deg );*/
+  }
+  .card:hover > .back{
+    /*transform: perspective( 900px ) rotateY( 0deg );*/
+    /*-webkit-transform: perspective( 900px ) rotateY( 0deg );*/
+  }
+}
+
+
 .card:hover{
   /*-webkit-transform: rotateY( 180deg );*/
   /*-moz-transform: rotateY( 180deg );*/
