@@ -1,4 +1,4 @@
-app.directive('flipCard',function($location){
+app.directive('flipCard',function($location,$timeout){
   return {
     restrict: 'E',
     transclude: 'true',
@@ -23,7 +23,10 @@ app.directive('flipCard',function($location){
     link: function(scope, element, attrs) {
 
       var callUrl = function (url) {
-        $location.path(url);
+        $timeout(function(){
+          $location.url(url)
+        })
+
       }
 
       scope.frontClick = function(url){
@@ -36,7 +39,7 @@ app.directive('flipCard',function($location){
       }
 
       scope.backClick = function(url){
-        callUrl( url.substr(1,url.length) );
+        callUrl( url );
       }
 
     }

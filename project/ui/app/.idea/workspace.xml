@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eddbe608-8c96-447c-839c-5975d450b6e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/home.html" afterPath="$PROJECT_DIR$/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main.css" afterPath="$PROJECT_DIR$/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="eddbe608-8c96-447c-839c-5975d450b6e5" name="Default" comment="" />
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -244,7 +240,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Codebase/vPV/2.10/ovpm8/PVUI/GC/project/Perf-Web/web/html/ui" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>

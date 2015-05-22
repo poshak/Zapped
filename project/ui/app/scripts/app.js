@@ -26,6 +26,28 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
         templateUrl: 'home/home.html',
         controller : 'HomeCtrl'
       });
+
+  $stateProvider
+    .state('list', {
+      url: '/list?type',
+      templateUrl: 'ListOfItems/list.html',
+      controller: 'ListController'
+    });
+    //.state('list.spices', {
+    //  url: '/spices',
+    //  templateUrl: 'ListOfItems/spices.html'
+    //})
+    //.state('list.dryfruits', {
+    //  url: '/dryfruits',
+    //  templateUrl: 'ListOfItems/dryfruits.html'
+    //});
+
+  $stateProvider
+    .state('about', {
+      url: '/about',
+      templateUrl: 'about/about.html'
+    });
+
   $urlRouterProvider.otherwise('/home');
 
   //translate
