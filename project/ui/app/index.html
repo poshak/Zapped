@@ -47,8 +47,9 @@
   </div>
 </div>
 
-<div class="container">
-  <div ui-view="" style="border: solid 1px black;display: block"></div>
+<!--<div class="container" style="padding-bottom: 55px;border: solid 1px black;">-->
+<div class="container" style="padding-bottom: 55px">
+  <div ui-view="" style="display: block"></div>
 </div>
 
 <div class="footer footer-class" >
@@ -92,12 +93,15 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/google-spreadsheet.js"></script>
 <script src="scripts/app.js"></script>
+<script src="services/services.js"></script>
 <script src="home/HomeCtrl.js"></script>
 <script src="ListOfItems/ListController.js"></script>
+<script src="item/ItemController.js"></script>
 
 
 <!-- directives -->
 <script src="directives/FlipCard/FlipCardDirective.js"></script>
+<script src="directives/ItemCard/ItemCardDirective.js"></script>
 
 <!-- endbuild -->
 </body>

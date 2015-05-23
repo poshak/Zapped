@@ -33,6 +33,12 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
       templateUrl: 'ListOfItems/list.html',
       controller: 'ListController'
     });
+  $stateProvider
+    .state('item', {
+      url: '/item/:name',
+      templateUrl: 'item/item.html',
+      controller: 'ItemCtrl'
+    });
     //.state('list.spices', {
     //  url: '/spices',
     //  templateUrl: 'ListOfItems/spices.html'

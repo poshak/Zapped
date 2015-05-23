@@ -1,1 +1,13 @@
-{{root.type}}
+
+<div>
+  <div ng-repeat="item in data |  orderBy: 'Price_per_Minimum_quantity'|filter : {'Category':root.type}">
+    <item-card
+      image="{{item.Image}}"
+      name="{{item.Name}}"
+      description="{{item.Description}}"
+      price="{{item['Price_per_Minimum_quantity']}}"
+      quantity="{{item['Minimum quantity (in grams)']}}"
+      ></item-card>
+  </div>
+</div>
+

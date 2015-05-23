@@ -67,8 +67,22 @@ body {
   padding: 14px 24px;
 }
 
+.desc-class{
+  width: 100%;
+  max-height: 60px;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  display: inline-block;
+  /* line-height: 1.2; */
+}
+
 .description-class{
   padding: 5px;
+}
+
+.thumbnail:hover {
+  border: 1px solid #abd0d9; box-shadow:0 0 20px 0 rgba(0,0,0,0.2);
 }
 
 .card-container {
@@ -176,6 +190,7 @@ body {
   background-size: cover;
   background-position: 100% 100%;
 }
+
 
 /* Supporting marketing content */
 .marketing {
