@@ -6,7 +6,7 @@ app.factory('webservices', ['$http','$q',function($http,$q) {
   var isNumeric = function( obj ) {
     return !jQuery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
   };
-  var key_arr =["Name",	"Category",	"Description",	"Place of Origin",	"Minimum quantity (in grams)",	"Price_per_Minimum_quantity",	"Total Stock",	"Items Sold",	"Image"]
+  var key_arr =["Name",	"Category",	"Description",	"Place of Origin",	"Minimum quantity (in grams)",	"Price_per_Minimum_quantity",	"Total Stock",	"Items_Sold",	"Image"]
 
   var sample_url = "https://spreadsheets.google.com/pub?key=1d9qric1A3wSmEeKWswxrQC02QDRPZIqqjR5BaKO1jqw&hl=en&output=html";
   //https://docs.google.com/spreadsheets/d/1d9qric1A3wSmEeKWswxrQC02QDRPZIqqjR5BaKO1jqw/pubhtml?gid=0&single=true

@@ -5,7 +5,7 @@
         <h4 style="margin: 0px"><b>{{name}}</b></h4>
         <h6 style="width: 100%">{{quantity}}<span class="pull-right">Rs. {{price}}&nbsp;</span></h6>
         <h6 style="width: 100%;margin-bottom: 0px">Sourced from: {{place}}
-          <div ng-click="addItemToCart(name);$event.stopPropagation();$event.preventDefault();" class="pull-right" style="right: 0px;bottom: 0px;position: absolute;padding: 2px;">
+          <div ng-click="addItemToCart(name,quantity);$event.stopPropagation();$event.preventDefault();" class="pull-right" style="right: 0px;bottom: 0px;position: absolute;padding: 2px;">
             <span  class="glyphicon glyphicon-plus-sign" style="font-size: x-large"></span>
           </div></h6>
 

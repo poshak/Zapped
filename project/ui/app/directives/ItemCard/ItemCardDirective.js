@@ -13,8 +13,8 @@ app.directive('itemCard',function($location,$timeout){
       place: '@'
     },
     link: function(scope, element, attrs) {
-    scope.addItemToCart = function(name){
-      alert('Added '+name+' to cart');
+    scope.addItemToCart = function(name,quantity){
+      alert('Added '+quantity+' of '+name+' to cart');
     }
     }
   };
