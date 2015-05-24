@@ -1,12 +1,18 @@
 <div class="col-sm-4 col-lg-4 col-md-4">
-  <a href="#/item/{{name}}"><div class="thumbnail">
+  <a href="#/item/{{name}}"><div class="thumbnail" style="position: relative">
       <img src="{{image}}" alt="">
       <div class="caption">
         <h4 style="margin: 0px"><b>{{name}}</b></h4>
         <h6 style="width: 100%">{{quantity}}<span class="pull-right">Rs. {{price}}&nbsp;</span></h6>
-        <div class="desc-class" style="padding-bottom: 0px" title="{{description}}">
-          {{description}}</div>
-        <!--<span style="float: right;line-height: 0;position: absolute;bottom: 50px;">...</span>-->
+        <h6 style="width: 100%;margin-bottom: 0px">Sourced from: {{place}}
+          <div ng-click="addItemToCart(name);$event.stopPropagation();$event.preventDefault();" class="pull-right" style="right: 0px;bottom: 0px;position: absolute;padding: 2px;">
+            <span  class="glyphicon glyphicon-plus-sign" style="font-size: x-large"></span>
+          </div></h6>
+
+
+        <!--<div class="desc-class" style="padding-bottom: 0px" title="{{description}}">-->
+          <!--{{description}}</div>-->
+        <!--&lt;!&ndash;<span style="float: right;line-height: 0;position: absolute;bottom: 50px;">...</span>&ndash;&gt;-->
       </div>
   </div></a>
 </div>

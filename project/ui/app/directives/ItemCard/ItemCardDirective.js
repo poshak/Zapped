@@ -10,10 +10,12 @@ app.directive('itemCard',function($location,$timeout){
       type: '@',
       description: '@',
       quantity: '@',
-      url: '@'
+      place: '@'
     },
     link: function(scope, element, attrs) {
-
+    scope.addItemToCart = function(name){
+      alert('Added '+name+' to cart');
+    }
     }
   };
 });

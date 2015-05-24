@@ -51,7 +51,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
   $stateProvider
     .state('about', {
       url: '/about',
-      templateUrl: 'about/about.html'
+      templateUrl: 'about/about.html',
     });
 
   $urlRouterProvider.otherwise('/home');
@@ -59,8 +59,11 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
   //translate
   $translateProvider.translations('en', {
     'PRODUCT_NAME':'Meva Masala',
-    'Tagline':'The Secret Ingredient'
+    'Tagline':'The Secret Ingredient',
+    'spice':'SPICES',
+    'dryfruit':'DRY FRUITS'
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.useSanitizeValueStrategy('escaped');
   });
+

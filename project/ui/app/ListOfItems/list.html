@@ -1,12 +1,18 @@
-
+<h4 style="margin: 0px;text-align: -webkit-center;">{{root.header|translate}}</h4>
 <div>
-  <div ng-repeat="item in data |  orderBy: 'Price_per_Minimum_quantity'|filter : {'Category':root.type}">
+  <div style="float: left;margin: 10px;">Sort by : <select ng-options="item.id as item.name for item in orderByaRR" ng-model="selected"></select></div>
+  <input style="float: right;margin: 5px" placeholder="Search" type="text" ng-model="searchObj.Name"/>
+</div>
+<hr style="clear: both">
+<div style="clear: both">
+  <div ng-repeat="item in data |  orderBy: orderByObj|filter : searchObj">
     <item-card
-      image="{{item.Image}}"
+      image="/images/items/{{item.Name}}.jpg"
       name="{{item.Name}}"
       description="{{item.Description}}"
       price="{{item['Price_per_Minimum_quantity']}}"
       quantity="{{item['Minimum quantity (in grams)']}}"
+      place="{{item['Place of Origin']}}"
       ></item-card>
   </div>
 </div>
