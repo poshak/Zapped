@@ -161,15 +161,38 @@ body {
 
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
   .card:hover > .front{
-    /*transform: perspective( 900px ) rotateY( -180deg );*/
-    /*-webkit-transform: perspective( 900px ) rotateY( -180deg );*/
+    transform: none;
+    -webkit-transform:none;
   }
   .card:hover > .back{
-    /*transform: perspective( 900px ) rotateY( 0deg );*/
-    /*-webkit-transform: perspective( 900px ) rotateY( 0deg );*/
+    transform:none;
+    -webkit-transform: none;
+  }
+
+  #break-div{
+    display: block !important;
   }
 }
 
+input[type="text"] {
+  padding: 5px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+.glyphicon-shopping-cart {
+  overflow: hidden;
+  transition-duration: 1.8s;
+  transition-property: transform;
+}
+.glyphicon-shopping-cart.rotate-class {
+  transform: rotate(360deg);
+}
 
 .card:hover{
   /*-webkit-transform: rotateY( 180deg );*/

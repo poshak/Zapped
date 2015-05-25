@@ -1,4 +1,4 @@
-app.directive('itemCard',function($location,$timeout){
+app.directive('itemCard',function($location,$timeout,$rootScope){
   return {
     restrict: 'E',
     transclude: 'true',
@@ -14,7 +14,7 @@ app.directive('itemCard',function($location,$timeout){
     },
     link: function(scope, element, attrs) {
     scope.addItemToCart = function(name,quantity){
-      alert('Added '+quantity+' of '+name+' to cart');
+      $rootScope.addToCart(name,quantity);
     }
     }
   };

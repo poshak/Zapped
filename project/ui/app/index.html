@@ -15,16 +15,17 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="app" ng-cloak>
+<body ng-app="app" ng-cloak  autoscroll="true">
 <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="header" style="border-bottom: none">
+<div class="header" style="border-bottom: none;top: 0px;width: 100%;position: fixed;z-index: 10000">
   <div class="navbar navbar-default" role="navigation">
     <div class="container">
-      <div class="navbar-header">
+      <div class="navbar-header" style="position: absolute;width: 90%">
+
 
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -35,22 +36,27 @@
 
         <a class="navbar-brand mevamasala" href="#/home">Meva Masala</a>
       </div>
+      <div title="Check out!" style="float: right;margin-top: 10px;margin-left: 15px;margin-bottom: 8px;"><a ng-href="#/cart">
+        <span style="font-size: x-large" class="glyphicon glyphicon-shopping-cart" data-container="body" data-toggle="popover"
+              data-trigger="none" data-placement="bottom"></span></a></div>
 
-      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+      <div class="collapse navbar-collapse" id="js-navbar-collapse" style="float: right">
+        <div id="break-div" style="display: none"><br><br></div>
 
         <ul class="nav navbar-nav" style="float: right">
           <li><a ng-href="#/list">Products</a></li>
           <li><a ng-href="#/about">About</a></li>
           <li><a ng-href="#/contact">Contact</a></li>
         </ul>
+
       </div>
     </div>
   </div>
 </div>
 
 <!--<div class="container" style="padding-bottom: 55px;border: solid 1px black;">-->
-<div class="container" style="padding-bottom: 55px">
-  <div ui-view="" style="display: block"></div>
+<div class="container" id="main-container" style="padding: 55px 0">
+  <div ui-view="" style="display: block" autoscroll="true"></div>
 </div>
 
 <div class="footer footer-class" >
@@ -98,6 +104,7 @@
 <script src="home/HomeCtrl.js"></script>
 <script src="ListOfItems/ListController.js"></script>
 <script src="item/ItemController.js"></script>
+<script src="cart/CartCtrl.js"></script>
 
 
 <!-- directives -->

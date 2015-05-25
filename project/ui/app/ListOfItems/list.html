@@ -1,7 +1,7 @@
-<h4 style="margin: 0px;text-align: -webkit-center;">{{root.header|translate}}</h4>
+<h4 style="margin: 0px;margin-top: 10px;text-align: -webkit-center;"><b>{{root.header|translate}}</b></h4>
 <div>
-  <div style="float: left;margin: 10px;">Sort by : <select ng-options="item.id as item.name for item in orderByaRR" ng-model="selected"></select></div>
-  <input style="float: right;margin: 5px" placeholder="Search" type="text" ng-model="searchObj.Name"/>
+  <div style="float: left;margin: 10px;">Sort by : <select class="dropdown" ng-options="item.id as item.name for item in orderByaRR" ng-model="selected"></select></div>
+  <input class="inputText" style="float: right;margin: 5px" placeholder="Search" type="text" ng-model="searchObj.Name"/>
 </div>
 <hr style="clear: both">
 <div style="clear: both">

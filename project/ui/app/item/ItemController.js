@@ -1,4 +1,4 @@
-app.controller('ItemCtrl',function($scope,$translate,$stateParams,webservices){
+app.controller('ItemCtrl',function($scope,$translate,$stateParams,webservices,$rootScope){
   var max_quantity = 5 ;
   $scope.name = $stateParams.name;
   $scope.count = 1;
@@ -25,10 +25,12 @@ app.controller('ItemCtrl',function($scope,$translate,$stateParams,webservices){
     });
   });
 
-  $scope.addToCart = function(){
+  $scope.addToCart = function(name,quantity){
     if(!$scope.count || $scope.count > $scope.maxval){
       $scope.count = $scope.maxval;
     }
+    $rootScope.addToCart(name,$scope.count + ' X ' + quantity);
+
   }
   webservices.then(function(data){
     var data_arr = data.data;

@@ -4,7 +4,7 @@ app.directive('flipCard',function($location,$timeout){
     transclude: 'true',
     templateUrl: 'directives/FlipCard/Flip-Card.html',
     scope: {
-      title: '@',
+      titleName: '@',
       frontImage: '@',
       backImage: '@',
       frontHeader: '@',
