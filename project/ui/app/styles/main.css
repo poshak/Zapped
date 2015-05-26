@@ -194,6 +194,9 @@ input[type="text"].focus {
   transform: rotate(360deg);
 }
 
+.default-font{
+;font-family: Bookman;margin: 10px 20px;font-weight: bold;font-size: large
+}
 .card:hover{
   /*-webkit-transform: rotateY( 180deg );*/
   /*-moz-transform: rotateY( 180deg );*/
