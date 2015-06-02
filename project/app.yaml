@@ -1,0 +1,52 @@
+application: meva-masala
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /bower_components/(.*\.css)
+  mime_type: text/css
+  static_files: ui/bower_components/\1
+  upload: ui/bower_components/(.*\.css)
+
+- url: /(.*\.css.map)
+  static_files: ui/\1
+  upload: ui/(.*\.css.map)
+  
+- url: /(.*\.woff)
+  static_files: ui/\1
+  upload: ui/(.*\.woff)
+  
+- url: /(.*\.woff2)
+  static_files: ui/\1
+  upload: ui/(.*\.woff2)
+  
+- url: /styles/(.*\.css)
+  mime_type: text/css
+  static_files: ui/app/styles/\1
+  upload: ui/app/styles/(.*\.css)
+   
+- url: /(.*\.html)
+  mime_type: text/html
+  static_files: ui/app/\1
+  upload: ui/app/(.*\.html)
+
+- url: /bower_components/(.*\.js)
+  mime_type: text/javascript
+  static_files: ui/bower_components/\1
+  upload: ui/bower_components/(.*\.js)
+  
+- url: /(.*\.js)
+  mime_type: text/javascript
+  static_files: ui/app/\1
+  upload: ui/app/(.*\.js)
+
+# image files
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: ui/app/\1
+  upload: ui/app/(.*\.(bmp|gif|ico|jpeg|jpg|png))
+
+# site root
+- url: /
+  static_files: ui/app/index.html
+  upload: ui/app/index.html

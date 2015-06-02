@@ -1,11 +1,16 @@
-<h4 style="margin: 0px;margin-top: 10px;text-align: -webkit-center;"><b>{{root.header|translate}}</b></h4>
+<h4 style="margin: 0px;margin-top: 10px;text-align: -webkit-center;text-align: center;"><b>{{root.header|translate}}</b></h4>
 <div>
-  <div style="float: left;margin: 10px;">Sort by : <select class="dropdown" ng-options="item.id as item.name for item in orderByaRR" ng-model="selected"></select></div>
-  <input class="inputText" style="float: right;margin: 5px" placeholder="Search" type="text" ng-model="searchObj.Name"/>
+  <div style="float: left;margin-left: 10px;margin-bottom: 10px;">Sort by :
+    <div class="dropdown">
+    <select  ng-options="item.id as item.name for item in orderByaRR" ng-model="selected"></select>
+  </div>
+  </div>
+  <input class="inputText" style="float: right;margin: 5px 0px;margin-right: 10px;" placeholder="Search" type="text" ng-model="searchObj.Name"/>
 </div>
 <hr style="clear: both">
 <div style="clear: both">
-  <div ng-repeat="item in data |  orderBy: orderByObj|filter : searchObj">
+  <!--<div id="main-img-div" ng-repeat="item in root.filteredItems = data| filter : searchObj |  orderBy: orderByObj | as:this:'filteredItems'">-->
+  <div ng-repeat="item in filteredData = (data | filter:searchObj|  orderBy: orderByObj )" >
     <item-card
       image="/images/items/{{item.Name}}.jpg"
       name="{{item.Name}}"
@@ -13,6 +18,7 @@
       price="{{item['Price_per_Minimum_quantity']}}"
       quantity="{{item['Minimum quantity (in grams)']}}"
       place="{{item['Place of Origin']}}"
+      func = "onImageLoad(name)"
       ></item-card>
   </div>
 </div>

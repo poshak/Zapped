@@ -1,6 +1,21 @@
-app.controller('ListController',function($scope,$stateParams,webservices){
-  if(!$scope.root){
-    $scope.root = {};
+app.controller('ListController',function($scope,$stateParams,webservices,$rootScope,$window,$filter){
+
+ $scope.showObj = {};
+
+  $scope.$watch('totalCount', function(newval, oldval){
+    if(newval && newval == $scope.filteredData.length){
+      //$.unblockUI();
+    }else{
+      if(newval == 0){
+        //$.blockUI();
+      }
+    }
+  });
+
+  $scope.onImageLoad = function(name){
+    $scope.totalCount++;
+    $scope.showObj[name] = true;
+    $scope.$apply();
   }
 
   $scope.root.header = $stateParams.type;
@@ -10,6 +25,11 @@ app.controller('ListController',function($scope,$stateParams,webservices){
   }
   webservices.then(function(data){
     $scope.data = data.data;
+    if($scope.data && $scope.data.constructor === Array){
+      $scope.totalCount = 0;
+    }else{
+
+    }
     console.log($scope.data);
   });
 
@@ -45,5 +65,18 @@ app.controller('ListController',function($scope,$stateParams,webservices){
     }
     localStorage.setItem("selected", newval);
   });
+
+  //var unblockUI = function (){
+  //  $rootScope.imagesLoaded = true;
+  //  //alert('loaded');
+  //  $.unblockUI();
+  //}
+  //
+  //if(!$rootScope.imagesLoaded){
+  //  $.blockUI();
+  //  $("#main-img-div").find('img').batchImageLoad({
+  //    loadingCompleteCallback: unblockUI
+  //  });
+  //}
 
 });

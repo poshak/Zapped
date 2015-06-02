@@ -1,7 +1,13 @@
 app.controller('ItemCtrl',function($scope,$translate,$stateParams,webservices,$rootScope){
-  var max_quantity = 5 ;
+  var max_quantity = $rootScope.max_quantity ;
   $scope.name = $stateParams.name;
   $scope.count = 1;
+
+  $scope.onLoad = function(){
+    $scope.imageLoaded = true;
+    $scope.$apply();
+  }
+
 
   $(document).ready(function() {
     $("#txtboxToFilter").keydown(function (e) {
@@ -29,8 +35,16 @@ app.controller('ItemCtrl',function($scope,$translate,$stateParams,webservices,$r
     if(!$scope.count || $scope.count > $scope.maxval){
       $scope.count = $scope.maxval;
     }
-    $rootScope.addToCart(name,$scope.count + ' X ' + quantity);
+    $scope.disabledVal = true;
+    $rootScope.addToCart(name,$scope.count);
 
+  }
+
+  for(var x in $rootScope.root.cart){
+    var obj = $rootScope.root.cart[x];
+    if(obj.Name == $scope.name ){
+      $scope.disabledVal = true;
+    }
   }
   webservices.then(function(data){
     var data_arr = data.data;

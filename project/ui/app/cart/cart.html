@@ -1,3 +1,42 @@
-<div style="width: 100%;text-align: center">
-  <h2>Cart coming up soon !</h2>
+<div style="width: 100%;text-align: center;position: relative">
+  <h2>Shopping Cart</h2>
+  <div ng-show="root.cart && root.cart.length > 0" style="margin-bottom: 55px;">
+
+    <div style="display: table;margin: auto;width: 100%">
+  <div  ng-repeat="item in root.cart" class="cart-div col-md-12" style="position: relative;padding: 0px;display: table;border: 1px solid black;border-radius: 10px;width: 100%;width: 98%;margin: 0 5px;margin-bottom: 10px;">
+    <cart-card name="{{item.Name}}"
+               quantity="{{item['Minimum quantity (in grams)']}}"
+               price="{{item['Price_per_Minimum_quantity']}}"
+               count="item.Quantity"
+               max-count="{{item['maxquantity']}}"
+
+            >
+
+    </cart-card>
+      <div style="float: right;margin: auto;display: table-row;padding-top: 25px;padding-right: 10px;max-width: 10%;font-size: larger;">
+          <span style="cursor: pointer;float: right" class="glyphicon glyphicon-trash" ng-click="deleteItem($index)" title="delete item"></span>
+      </div>
+
+  </div>
+        <div class="bottom-buttons" style="width: 48%;" ng-show="root.cart && root.cart.length > 0">
+            <button class="btn btn-success" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;"  ng-click="placeOrder()">
+                <span style="color: black;font-weight: bold">Total:<span>{{root.total| number : fractionSize}}</span></span><br>
+                <b>Place Order</b>
+            </button>
+            <button class="btn btn-danger" style="width: 28%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;" ng-click="clearLocalStorage()">Clear <br> cart</button>
+            <button class="btn btn-primary" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;"><a ng-href="#/list" style="display: block;color: white">Continue <br> Shopping</a></button>
+
+        </div>
+      </div>
+
+  </div>
+  <h4 ng-hide="root.cart && root.cart.length > 0">No items in cart yet!
+      <br>
+      <button class="btn btn-primary" style="padding: 5px;margin: 10px;border: 1px solid black;"><a style="color: white" ng-href="#/list">Continue Shopping</a></button></h4>
+    <br></h4>
+  <br>
+
+
 </div>
+
+

@@ -1,12 +1,14 @@
-<div class="col-sm-4 col-lg-4 col-md-4">
+<div class="col-md-4 item-card-class">
   <a href="#/item/{{name}}"><div class="thumbnail" style="position: relative">
-      <img src="{{image}}" alt="">
+      <img style="max-height: 200px" src="{{image}}" alt="" img-load="onLoad(name)" ng-show="ImageLoaded">
+      <img style="max-height: 200px" src="/images/loading.gif" alt="" ng-show="!ImageLoaded">
       <div class="caption">
-        <h4 style="margin: 0px"><b>{{name}}</b></h4>
-        <h6 style="width: 100%">{{quantity}}<span class="pull-right">Rs. {{price}}&nbsp;</span></h6>
-        <h6 style="width: 100%;margin-bottom: 0px">Sourced from: {{place}}
+        <h4 class="overflow-class" title="{{name}}" style="margin: 0px;"><b>{{name}}</b></h4>
+        <h6 style="width: 100%">{{quantity}}<span class="pull-right cost-class">Rs. {{price}}&nbsp;</span></h6>
+        <h6 style="width: 100%;margin-bottom: 0px" class="overflow-class" >Sourced from: {{place}}
           <div ng-click="addItemToCart(name,quantity);$event.stopPropagation();$event.preventDefault();" class="pull-right" style="right: 0px;bottom: 0px;position: absolute;padding: 2px;">
-            <span  class="glyphicon glyphicon-plus-sign" style="font-size: x-large"></span>
+            <span ng-class="{'glyphicon glyphicon-plus-sign x-large-text-class' : !checkIfAdded(name),'glyphicon glyphicon-ok large-text-class' : checkIfAdded(name)}"></span>
+
           </div></h6>
 
 

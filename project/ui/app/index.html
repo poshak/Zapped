@@ -16,13 +16,16 @@
   <!-- endbuild -->
 </head>
 <body ng-app="app" ng-cloak  autoscroll="true">
+<div class="growlUI" style="cursor: default; display: none;z-index: 10000;">
+  <h6 id="growl-id"></h6>
+</div>
 <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
 <div class="header" style="border-bottom: none;top: 0px;width: 100%;position: fixed;z-index: 10000">
-  <div class="navbar navbar-default" role="navigation">
+  <div class="navbar navbar-default" role="navigation" style="box-shadow:0 0 20px 0 rgb(61, 154, 217);">
     <div class="container">
       <div class="navbar-header" style="position: absolute;width: 90%">
 
@@ -34,19 +37,21 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand mevamasala" href="#/home">Meva Masala</a>
+        <a class="navbar-brand mevamasala" style="font-size: x-large;color: black;" href="#/home">Meva Masala</a>
       </div>
-      <div title="Check out!" style="float: right;margin-top: 10px;margin-left: 15px;margin-bottom: 8px;"><a ng-href="#/cart">
-        <span style="font-size: x-large" class="glyphicon glyphicon-shopping-cart" data-container="body" data-toggle="popover"
-              data-trigger="none" data-placement="bottom"></span></a></div>
+      <div ng-cloak title="Check out!" style="float: right;margin-top: 10px;margin-left: 15px;margin-bottom: 8px;"><a ng-href="#/cart">
+        <span ng-cloak style="font-size: x-large;position: relative;margin: 0px 5px;" class="glyphicon glyphicon-shopping-cart">
+          <span ng-cloak ng-if="root.cart && root.cart.length > 0" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;position: absolute;top: -3px;right: 0px;color: orange;font-size: large;font-weight: bold;z-index: 10000;">{{root.cart.length}}</span></span></a>
+
+      </div>
 
       <div class="collapse navbar-collapse" id="js-navbar-collapse" style="float: right">
         <div id="break-div" style="display: none"><br><br></div>
 
         <ul class="nav navbar-nav" style="float: right">
-          <li><a ng-href="#/list">Products</a></li>
+          <li><a ng-href="#/list">All Products</a></li>
           <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#/contact">Contact</a></li>
+          <!--<li><a ng-href="#/contact">Contact</a></li>-->
         </ul>
 
       </div>
@@ -61,10 +66,34 @@
 
 <div class="footer footer-class" >
   <div class="container">
+    <!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
+    <!--<div-->
+            <!--class="fb-like"-->
+            <!--data-share="true"-->
+            <!--data-width="450"-->
+            <!--data-show-faces="true">-->
+    <!--</div>-->
     <p><span class="glyphicon glyphicon-heart"></span> from the <span class="mevamasala">Meva Masala</span> team</p>
   </div>
 </div>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1591070074488697',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -91,6 +120,7 @@
 <script src="bower_components/angular-translate/angular-translate.js"></script>
 <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="scripts/fastclick.js"></script>
 <!-- endbower -->
 
 
@@ -98,6 +128,8 @@
 
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/jquery.blockUI.js"></script>
+<script src="scripts/jquery.batchImageLoad.js"></script>
 <script src="scripts/google-spreadsheet.js"></script>
 <script src="scripts/app.js"></script>
 <script src="services/services.js"></script>
@@ -110,6 +142,7 @@
 <!-- directives -->
 <script src="directives/FlipCard/FlipCardDirective.js"></script>
 <script src="directives/ItemCard/ItemCardDirective.js"></script>
+<script src="directives/CartItemCard/CartItemCardDirective.js"></script>
 
 <!-- endbuild -->
 </body>

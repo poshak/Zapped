@@ -74,7 +74,48 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
   $translateProvider.useSanitizeValueStrategy('escaped');
   });
 
-app.run(['$rootScope', function($rootScope) {
+app.directive('imgLoad', ['$parse', function($parse) { // Inject $parse
+  return {
+    restrict: 'A',
+    link: function(scope, element, attr) {
+      var loadHandler = $parse(attr.imgLoad); /* Parse value of
+       'imgLoad' attribute */
+      element.on('load', function() {
+        loadHandler(scope); /* Run the function returned by $parse.
+         It needs the scope object
+         to operate properly. */
+      });
+    }
+  };
+}]);
+
+app.run(['$rootScope','webservices', function($rootScope,webservices) {
+
+  FastClick.attach(document.body);
+  $rootScope.root = {};
+  $rootScope.max_quantity = 5;
+  $rootScope.root.total = 0;
+
+  var retrievedObject = sessionStorage.getItem('cartObject');
+  if(retrievedObject){
+    $rootScope.root.cart = JSON.parse(retrievedObject);
+  }else{
+    $rootScope.root.cart = [];
+  }
+  $rootScope.counter = 0;
+
+  $rootScope.saveToLocalStorage = function(){
+    sessionStorage.setItem('cartObject', JSON.stringify($rootScope.root.cart));
+  };
+
+  $rootScope.clearLocalStorage = function(){
+    if(confirm("Are you sure you want to clear the cart ?")){
+      $rootScope.root.cart = [];
+      $rootScope.root.total = 0;
+      $rootScope.saveToLocalStorage();
+    }
+
+  }
 
   var scrollToID = function goToByScroll(id){
     // Remove "link" from the ID
@@ -85,18 +126,134 @@ app.run(['$rootScope', function($rootScope) {
       'slow');
   };
 
+  var key_arr =["Name",	"Category",	"Description",	"Place of Origin",	"Minimum quantity (in grams)",	"Price_per_Minimum_quantity",	"Total Stock",	"Items_Sold",	"Image"];
+  var showNotification ;
+
   $rootScope.$on('$locationChangeStart', function(event) {
+    $rootScope.root.counter = $rootScope.root.cart.length;
     scrollToID('main-container');
+    $rootScope.root.total = 0;
   });
 
+  Array.prototype.move = function (old_index, new_index) {
+    if (new_index >= this.length) {
+      var k = new_index - this.length;
+      while ((k--) + 1) {
+        this.push(undefined);
+      }
+    }
+    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+    return this; // for testing purposes
+  };
+
+  $(document).ready(function () {
+    var growlVar = $('div.growlUI');
+    showNotification = function(){
+      $.blockUI({
+        message: growlVar,
+        fadeIn: 700,
+        fadeOut: 700,
+        timeout: 2000,
+        showOverlay: false,
+        centerY: false,
+        css: {
+          //width: '350px',
+          top: '55px',
+          left: '',
+          right: '10px',
+          border: 'none',
+          padding: '5px',
+          margin : '5px',
+          backgroundColor: '#000',
+          '-webkit-border-radius': '10px',
+          '-moz-border-radius': '10px',
+          //opacity: .6,
+          color: '#fff'
+        }
+      });
+    };
+  });
+
+  $(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') ) {
+      $(this).collapse('hide');
+    }
+  });
+
+
+  var addToCardFunction = function(name, quantity){
+
+    webservices.then(function(data){
+      var main_data = data.data;
+      var tmp_obj = {};
+      var tmp_var = '';
+      for(var x in main_data){
+        var obj = main_data[x];
+        if(obj.Name == name){
+          tmp_obj = obj;
+          tmp_var = obj['Minimum quantity (in grams)'];
+          break;
+        }
+      }
+      if(quantity){
+        tmp_var = quantity +' X '+tmp_var;
+      }
+      var main_obj = {'Name':name , 'Quantity' : quantity};
+      for(var t in key_arr){
+        main_obj[key_arr[t]] = tmp_obj[key_arr[t]];
+      }
+      if(tmp_obj["Total Stock"] > $rootScope.max_quantity){
+        main_obj['maxquantity'] = $rootScope.max_quantity;
+      }else{
+        main_obj['maxquantity'] = tmp_obj["Total Stock"];
+      }
+
+      $rootScope.root.cart.push(main_obj);
+      $rootScope.saveToLocalStorage();
+
+      jQuery('#growl-id').html('Added '+tmp_var+' of '+name+' to cart');
+      jQuery('.glyphicon-shopping-cart').addClass('rotate-class');
+      showNotification();
+      setTimeout(function () {
+        jQuery('.glyphicon-shopping-cart').removeClass('rotate-class');
+      }, 2000);
+    });
+  }
+
+  var existsInCardFunction = function(name){
+    jQuery('#growl-id').html( "'" +name + "'"+ ' already exists in the cart');
+    showNotification();
+  }
+
   $rootScope.addToCart = function(name, quantity){
-    jQuery('.glyphicon-shopping-cart').attr("data-content", 'Added '+quantity+' of '+name+' to cart');
-    jQuery('.glyphicon-shopping-cart').addClass('rotate-class');
-    jQuery('.glyphicon-shopping-cart').popover('show');
-    setTimeout(function () {
-      jQuery('.glyphicon-shopping-cart').removeClass('rotate-class');
-      jQuery('.glyphicon-shopping-cart').popover('hide');
-    }, 2000);
+    var data = $rootScope.root.cart;
+
+    var bool = false;
+      if(data){
+        for(var x in data){
+          var obj = data[x];
+          if(obj.Name == name){
+
+            existsInCardFunction(name);
+            bool = true;
+            break;
+          }
+        }
+        if(!bool){
+          addToCardFunction(name,quantity);
+        }
+      }
+
+  };
+
+  $rootScope.checkIfItemAdded = function(name) {
+    for (var x in $rootScope.root.cart) {
+      var obj = $rootScope.root.cart[x];
+      if(obj.Name == name){
+        return true;
+      }
+    }
+    return false;
   }
 
 }]);

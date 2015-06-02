@@ -1,0 +1,19 @@
+
+
+    <div style="float: left;display: table-row;max-width: 10%">
+    <img style="width: 70px;height: 70px;float: left;padding: 10px" src="/images/items/{{name}}.jpg">
+    </div>
+    <div style="float: left;display: table-row;width: 60%;position: relative;width: 80%;padding-left:5px;margin-left:5px">
+    <span style="display: block;;position: relative;padding: 10px;">
+        <span style="float: left;padding: 0 10px;"><a style="font-size: large;font-weight: bold;" href="#/item/{{name}}">{{name}}</a></span>
+        <span style="float: right;">{{quantity}}</span>
+    </span>
+    <!--<span style="right:15px;top: 0px;position: relative;padding: 5px;"></span>&nbsp;&nbsp;-->
+    <!--<span style="display: table-cell">{{count}}</span>&nbsp;&nbsp;-->
+        <span style="display: block;position: relative;padding: 10px;clear: left;float: right">Quantity:
+        <select ng-options="item as item for item in countArr" ng-model="count" ng-change="alertMe(countArr[$index])"></select>&nbsp;X&nbsp;
+    <span style="">Rs.{{price| number : fractionSize}}</span>&nbsp; =
+    <span style="">Rs.{{getPrice(count,price)}}</span>
+</span>
+        </div>
+
