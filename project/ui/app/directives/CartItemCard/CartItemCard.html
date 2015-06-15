@@ -10,7 +10,7 @@
     </span>
     <!--<span style="right:15px;top: 0px;position: relative;padding: 5px;"></span>&nbsp;&nbsp;-->
     <!--<span style="display: table-cell">{{count}}</span>&nbsp;&nbsp;-->
-        <span style="display: block;position: relative;padding: 10px;clear: left;float: right">Quantity:
+        <span style="display: block;position: relative;padding: 10px;clear: left;float: right">
         <select ng-options="item as item for item in countArr" ng-model="count" ng-change="alertMe(countArr[$index])"></select>&nbsp;X&nbsp;
     <span style="">Rs.{{price| number : fractionSize}}</span>&nbsp; =
     <span style="">Rs.{{getPrice(count,price)}}</span>

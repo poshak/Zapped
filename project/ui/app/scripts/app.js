@@ -18,8 +18,13 @@ var app = angular
     'ngTouch',
       'pascalprecht.translate'
   ]);
-app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
+app.config(function ($stateProvider, $urlRouterProvider,$translateProvider,$httpProvider) {
 //routing
+//  $httpProvider.defaults.useXDomain = true;
+//  $httpProvider.defaults.withCredentials = true;
+//  delete $httpProvider.defaults.headers.common["X-Requested-With"];
+//  $httpProvider.defaults.headers.common["Accept"] = "application/json";
+//  $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
     $stateProvider
       .state('home', {
         url: '/home',
@@ -39,6 +44,13 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
       templateUrl: 'item/item.html',
       controller: 'ItemCtrl'
     });
+
+  $stateProvider
+      .state('checkout', {
+        url: '/checkout',
+        templateUrl: 'check-out/check-out.html',
+        controller: 'checkout'
+      });
     //.state('list.spices', {
     //  url: '/spices',
     //  templateUrl: 'ListOfItems/spices.html'
@@ -53,6 +65,13 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider) {
       url: '/about',
       templateUrl: 'about/about.html'
     });
+
+  $stateProvider
+      .state('user', {
+        url: '/user',
+        templateUrl: 'user/user.html',
+        controller :'userctrl'
+      });
 
   $stateProvider
     .state('cart', {
@@ -89,10 +108,11 @@ app.directive('imgLoad', ['$parse', function($parse) { // Inject $parse
   };
 }]);
 
-app.run(['$rootScope','webservices', function($rootScope,webservices) {
+app.run(['$rootScope','webservices','$http','$templateCache', function($rootScope,webservices,$http,$templateCache) {
 
   FastClick.attach(document.body);
   $rootScope.root = {};
+  $rootScope.details = {};
   $rootScope.max_quantity = 5;
   $rootScope.root.total = 0;
 
@@ -133,6 +153,7 @@ app.run(['$rootScope','webservices', function($rootScope,webservices) {
     $rootScope.root.counter = $rootScope.root.cart.length;
     scrollToID('main-container');
     $rootScope.root.total = 0;
+    $("#loginpage").css("display", "none");
   });
 
   Array.prototype.move = function (old_index, new_index) {
@@ -221,7 +242,7 @@ app.run(['$rootScope','webservices', function($rootScope,webservices) {
   }
 
   var existsInCardFunction = function(name){
-    jQuery('#growl-id').html( "'" +name + "'"+ ' already exists in the cart');
+    jQuery('#growl-id').html( "'" +name + "'"+ " is already in the cart.<br> In order to change the quantity, click on the cart. ");
     showNotification();
   }
 
@@ -254,7 +275,32 @@ app.run(['$rootScope','webservices', function($rootScope,webservices) {
       }
     }
     return false;
+  };
+
+  $rootScope.root.launchLogin = function(){
+    $.blockUI({
+      message: $('#loginpage')
+    });
+    $('.blockOverlay').attr('title','Click to unblock').click($.unblockUI);
   }
+
+  setTimeout(function(){
+    console.log('Start template loading : '+new Date());
+
+    $http.get('ListOfItems/list.html', {cache:$templateCache});
+    $http.get('item/item.html', {cache:$templateCache});
+    $http.get('check-out/check-out.html', {cache:$templateCache});
+    $http.get('about/about.html', {cache:$templateCache});
+    $http.get('user/user.html', {cache:$templateCache});
+    $http.get('cart/cart.html', {cache:$templateCache});
+    $http.get('directives/ItemCard/Item-Card.html', {cache:$templateCache});
+    $http.get('directives/CartItemCard/CartItemCard.html', {cache:$templateCache});
+    $http.get('directives/FlipCard/Flip-Card.html', {cache:$templateCache});
+
+    console.log('End template loading : '+new Date());
+  }, 10000);
+
+
 
 }]);
 

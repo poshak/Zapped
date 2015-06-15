@@ -11,7 +11,8 @@ app.directive('itemCard',function($location,$timeout,$rootScope){
       description: '@',
       quantity: '@',
       place: '@',
-      func: '&func'
+      func: '&func',
+      available : '@'
     },
     link: function(scope, element, attrs) {
     scope.addItemToCart = function(name,quantity){
@@ -21,6 +22,9 @@ app.directive('itemCard',function($location,$timeout,$rootScope){
       scope.onLoad = function(name){
         scope.ImageLoaded = true;
         scope.func({'name':name});
+        scope.showOOS = true;
+        scope.$apply();
+        //alert(scope.available);
       };
 
       scope.checkIfAdded = function(name){

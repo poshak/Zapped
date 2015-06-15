@@ -8,7 +8,7 @@ app.factory('webservices', ['$http','$q',function($http,$q) {
   };
   var key_arr =["Name","Also named","Category",	"Description",	"Place of Origin",	"Minimum quantity (in grams)",	"Price_per_Minimum_quantity",	"Total Stock",	"Items_Sold",	"Image"]
 
-  var sample_url = "https://spreadsheets.google.com/pub?key=1d9qric1A3wSmEeKWswxrQC02QDRPZIqqjR5BaKO1jqw&hl=en&output=html";
+  var sample_url = "https://spreadsheets.google.com/pub?key=142jVnEIk8YuyK-jAhAJWXFL_LwGsf47VHU5E063mHZk&hl=en&output=html";
   //https://docs.google.com/spreadsheets/d/1d9qric1A3wSmEeKWswxrQC02QDRPZIqqjR5BaKO1jqw/pubhtml?gid=0&single=true
   var url_parameter = document.location.search.split(/\?url=/)[1];
   var url = url_parameter || sample_url;

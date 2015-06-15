@@ -2,18 +2,75 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  <title>Meva Masala</title>
+  <meta name="description" content="e-store delivering spices and dry fruits in bangalore">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.0,maximum-scale=1.0">
+  <link rel="shortcut icon" href=""/>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/loading.css">
+  <link rel="stylesheet" href="styles/ng-table.min.css">
+  <!--<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>-->
   <!-- endbuild -->
+  <style>
+    .backgrd-cls{
+      width: 100%;
+      height: 800px;
+      background-image: url(/images/background.jpg);
+      background-size: cover;
+      overflow: hidden;
+      position: relative;
+      background-position: center;
+      min-height: 300px;
+    }
+
+    .squeeze{
+
+      max-width:1250px;
+      margin:0 auto;
+      height: 100%;
+      padding:0 5px;
+      overflow: visible;
+      position: relative;
+
+    }
+
+    .backgrd-cls .squeeze:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+
+    .squeeze-text{
+      font-family: 'Indie Flower', cursive;
+      font-weight: bold;
+      font-size: 155%;
+      max-width: 60%;
+      display: inline-block;
+      vertical-align: middle;
+      color : wheat;
+
+    }
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+
+      .squeeze-text{
+        font-size: 130%!important;
+      }
+    }
+    @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+      .squeeze-text{
+        font-size: 110%!important;
+      }
+    }
+
+
+  </style>
 </head>
 <body ng-app="app" ng-cloak  autoscroll="true">
 <div class="growlUI" style="cursor: default; display: none;z-index: 10000;">
@@ -24,33 +81,35 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="header" style="border-bottom: none;top: 0px;width: 100%;position: fixed;z-index: 10000">
-  <div class="navbar navbar-default" role="navigation" style="box-shadow:0 0 20px 0 rgb(61, 154, 217);">
-    <div class="container">
+<div class="header" style="border-bottom: none;top: 0px;width: 100%;position: fixed;z-index: 10000;padding: 0;">
+  <div class="navbar navbar-default" role="navigation" style="box-shadow:0 0 20px 0 black;">
+    <div class="container fullwidth">
       <div class="navbar-header" style="position: absolute;width: 90%">
 
 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse" style="float: left;margin-right: 0;border-color: #2a6496 !important;">
           <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar" style="background-color: #2a6496 !important;"></span>
+          <span class="icon-bar" style="background-color: #2a6496 !important;"></span>
+          <span class="icon-bar" style="background-color: #2a6496 !important;"></span>
         </button>
 
-        <a class="navbar-brand mevamasala" style="font-size: x-large;color: black;" href="#/home">Meva Masala</a>
+        <a class="navbar-brand mevamasala" style="font-weight:bold;text-shadow: 1px 1px 1px black;color: chocolate;font-family: 'Indie Flower', cursive;" href="#/home">Meva Masala</a>
       </div>
-      <div ng-cloak title="Check out!" style="float: right;margin-top: 10px;margin-left: 15px;margin-bottom: 8px;"><a ng-href="#/cart">
-        <span ng-cloak style="font-size: x-large;position: relative;margin: 0px 5px;" class="glyphicon glyphicon-shopping-cart">
+      <div ng-cloak  style="float: right;margin-top: 10px;margin-left: 15px;margin-bottom: 8px;">
+        <a id="user" title="User" ng-href="#/user" style="cursor: pointer"><span class="glyphicon glyphicon-user icon-class header-font"></span></a>
+        <a title="Shopping Cart" ng-href="#/cart">
+        <span ng-cloak  class="glyphicon glyphicon-shopping-cart icon-class header-font">
           <span ng-cloak ng-if="root.cart && root.cart.length > 0" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;position: absolute;top: -3px;right: 0px;color: orange;font-size: large;font-weight: bold;z-index: 10000;">{{root.cart.length}}</span></span></a>
 
       </div>
 
-      <div class="collapse navbar-collapse" id="js-navbar-collapse" style="float: right">
+      <div class="collapse navbar-collapse float-class" id="js-navbar-collapse">
         <div id="break-div" style="display: none"><br><br></div>
 
-        <ul class="nav navbar-nav" style="float: right">
-          <li><a ng-href="#/list">All Products</a></li>
-          <li><a ng-href="#/about">About</a></li>
+        <ul class="nav navbar-nav" style="float: left">
+          <li><a ng-href="#/list" class="header-font">All Products</a></li>
+          <li><a ng-href="#/about" class="header-font">About</a></li>
           <!--<li><a ng-href="#/contact">Contact</a></li>-->
         </ul>
 
@@ -60,12 +119,31 @@
 </div>
 
 <!--<div class="container" style="padding-bottom: 55px;border: solid 1px black;">-->
-<div class="container" id="main-container" style="padding: 55px 0">
+<div class="container" id="main-container" style="padding: 65px 0;" >
+  <div id="confirmorder" style="display: none;margin: auto;">
+    <div id="confirmorder-text">
+
+    </div>
+    <hr>
+    <button style="float: left"><a href="#/list">Continue shopping</a></button>
+    <button style="float: right"><a href="#/user">View all orders</a></button>
+  </div>
+  <div id="loadingicon" class="loader" style="display: none;margin: auto;z-index: 1000000;position: absolute;left: 50%;bottom: 50%;">Loading...</div>
+  <div id="loginpage" style="display: none;margin: auto;">
+    <div id="fb-button" style="padding: 20px;display: none">
+    <fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();">
+      <span id="fb-button-span">
+      </span>
+    </fb:login-button>
+    </div>
+    <div id="status" style="display: none">
+    </div>
+  </div>
   <div ui-view="" style="display: block" autoscroll="true"></div>
 </div>
 
 <div class="footer footer-class" >
-  <div class="container">
+  <div class="container fullwidth">
     <!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
     <!--<div-->
             <!--class="fb-like"-->
@@ -73,42 +151,108 @@
             <!--data-width="450"-->
             <!--data-show-faces="true">-->
     <!--</div>-->
-    <p><span class="glyphicon glyphicon-heart"></span> from the <span class="mevamasala">Meva Masala</span> team</p>
+    <p><span class="glyphicon glyphicon-heart"></span> from the <span class="">Meva Masala</span> team</p>
   </div>
 </div>
 
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script>
+  var uservar = null;
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response,$rootScope) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      $.unblockUI();
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+      'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+      'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1591070074488697',
-      xfbml      : true,
-      version    : 'v2.3'
+      cookie     : true,  // enable cookies to allow the server to access
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.3' // use version 2.2
     });
+
+    // Now that we've initialized the JavaScript SDK, we call
+    // FB.getLoginStatus().  This function gets the state of the
+    // person visiting this page and can return one of three states to
+    // the callback you provide.  They can be:
+    //
+    // 1. Logged into your app ('connected')
+    // 2. Logged into Facebook, but not your app ('not_authorized')
+    // 3. Not logged into Facebook and can't tell if they are logged into
+    //    your app or not.
+    //
+    // These three cases are handled in the callback function.
+
+    $("#fb-button").css("display", "block");
+    $("#fb-button-span").innerHTML = "Login using Facebook";
+
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
   };
 
-  (function(d, s, id){
+  // Load the SDK asynchronously
+  (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
+    if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-</script>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<script>
-  !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-  }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-XXXXX-X');
-  ga('send', 'pageview');
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      var $body = angular.element(document.body);            // 1
+      var $rootScope = $body.injector().get('$rootScope');   // 2b
+      $rootScope.$apply(function () {              // 3
+        $rootScope.fb_name = response.name;
+        uservar = response.name;
+        $rootScope.fb_email = response.email;
+      });
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+              'Thanks for logging in, ' + response.name + '!';
+    });
+  }
 </script>
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="scripts/jquery.blockUI.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -128,7 +272,9 @@
 
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/jquery.blockUI.js"></script>
+<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+<script src="scripts/iphone-zoom.js"></script>
+<script src="scripts/ng-table.min.js"></script>
 <script src="scripts/jquery.batchImageLoad.js"></script>
 <script src="scripts/google-spreadsheet.js"></script>
 <script src="scripts/app.js"></script>
@@ -137,13 +283,44 @@
 <script src="ListOfItems/ListController.js"></script>
 <script src="item/ItemController.js"></script>
 <script src="cart/CartCtrl.js"></script>
+<script src="check-out/checkout.js"></script>
+<script src="user/userctrl.js"></script>
 
 
 <!-- directives -->
 <script src="directives/FlipCard/FlipCardDirective.js"></script>
 <script src="directives/ItemCard/ItemCardDirective.js"></script>
 <script src="directives/CartItemCard/CartItemCardDirective.js"></script>
-
+<script src="directives/FBDirective.js"></script>
+<script>
+//  document.getElementById('user').onclick = function() {
+//
+//  };
+//  $(document).ready(function() {
+//    $('#user').click(function() {
+//      if(!uservar){
+//        $.blockUI({
+//          message: $('#loginpage')
+//        });
+//        $('.blockOverlay').attr('title','Click to unblock').click($.unblockUI);
+//      }
+//
+//
+////      setTimeout(function() {
+////        $.unblockUI({
+////          onUnblock: function(){ alert('onUnblock'); }
+////        });
+////      }, 2000);
+//    });
+//  });
+</script>
+<!--<scipt>-->
+  <!--$.blockUI();-->
+  <!--$(document).ready(function() {-->
+  <!--$.unblockUI();-->
+  <!--});-->
+  <!--});-->
+<!--</scipt>-->
 <!-- endbuild -->
 </body>
 </html>

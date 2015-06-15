@@ -13,18 +13,20 @@
             >
 
     </cart-card>
-      <div style="float: right;margin: auto;display: table-row;padding-top: 25px;padding-right: 10px;max-width: 10%;font-size: larger;">
+      <div style="float: right;margin: auto;display: table-row;padding-top: 25px;padding-right: 5px;padding-bottom: 5px;max-width: 10%;font-size: larger;">
           <span style="cursor: pointer;float: right" class="glyphicon glyphicon-trash" ng-click="deleteItem($index)" title="delete item"></span>
       </div>
 
   </div>
         <div class="bottom-buttons" style="width: 48%;" ng-show="root.cart && root.cart.length > 0">
-            <button class="btn btn-success" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;"  ng-click="placeOrder()">
-                <span style="color: black;font-weight: bold">Total:<span>{{root.total| number : fractionSize}}</span></span><br>
-                <b>Place Order</b>
+            <button class="btn btn-success" ng-click="takeToCheckOut()" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;">
+                <!--<a ng-href="#/checkout" style="display: block;color: white">-->
+                    <span ng-hide="hide" style="color: black;font-weight: bold">Total:<span>{{root.total| number : fractionSize}}</span></span><br>
+                    <b>Place Order</b>
+                <!--</a>-->
             </button>
             <button class="btn btn-danger" style="width: 28%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;" ng-click="clearLocalStorage()">Clear <br> cart</button>
-            <button class="btn btn-primary" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;"><a ng-href="#/list" style="display: block;color: white">Continue <br> Shopping</a></button>
+            <button class="btn btn-primary" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;" ng-click="takeToList()">Continue <br> Shopping</button>
 
         </div>
       </div>

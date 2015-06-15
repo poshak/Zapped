@@ -1,0 +1,78 @@
+<div style="padding: 10px">
+    <hr ng-if="!fb_name">
+    <div ng-if="fb_name" id="details-element">
+        <h3 style="text-align: -webkit-center;color: chocolate;">Hi {{fb_name}} !</h3>
+    </div>
+</div>
+
+<form name="detailsform" class="col-md-8 col-md-offset-2 form-parent">
+    <div style="display: inline-block;width: 100%;">
+        <label>Email :</label> <br>
+        <input type="email" name="email" placeholder="Email" style="display: inline-block;margin-bottom: 0 !important;width: 100%" ng-model="details.email" required>
+            <br>
+        <span class="error-red" ng-show="detailsform.email.$error.email">Not valid email!</span>
+        <span class="error-red" ng-show="detailsform.email.$error.required">Required!</span>
+    </div>
+    <br>
+    <span style="display: inline-block;width: 100%;position: relative;">
+        <hr>
+        <label>Phone number :</label> <br>
+<input ng-required="true" type="number" name="phone" ng-minlength="10" ng-maxlength="10" placeholder="Phone" size="10" style="width: 100%;padding-left: 55px;margin-bottom: 0 !important;" ng-model="details.phone" required>
+        <span style="outline: none;padding: 10px;border-radius: 5px;border: 1px solid #DDDDDD;margin-left: 10px;margin-bottom: 0 !important;position: absolute;bottom: 0px;left: 0px"  >+91</span>
+        <br>
+            <span class="error-red" style="bottom: -18%;left: 50%;" ng-show="detailsform.phone.$error.required || detailsform.phone.$error.number">Required!</span>
+            <span class="error-red" style="bottom: -18%;left: 50%;" ng-show="((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) ">Number should be 10 digits</span>
+        </span>
+    <br>
+    <div style="display: inline-block;width: 100%;">
+        <hr>
+        <label>Address : </label><br>
+        <textarea name="address" rows="4" cols="42" placeholder="Address" ng-model="details.address" style="margin-bottom: 0px;width: 100%;" required></textarea>
+        <br>
+        <span class="error-red" ng-show="detailsform.address.$error.required">Required!</span>
+    </div>
+    <br>
+    <div style="display: inline-block;width: 100%;">
+        <hr>
+        <label>Locality :</label> <br>
+        <select style="margin-bottom: 0px;width: 100%;"  ng-options="item as item for item in areaArr" ng-model="details.area">
+            <option value="">-- Select Locality --</option>
+        </select>
+        <br>
+        <span class="error-red" ng-show="!details.area">Required!</span>
+    </div>
+    <br>
+    <hr>
+
+    <!--<div style="margin: auto;width:100% ; display:inline-block" class="g-recaptcha" data-sitekey="6LdM2QcTAAAAAHB5rePgdHgGL0kwV0APjM7Vc3bG">-->
+
+    <!--</div>-->
+
+</form>
+
+<div  class="bottom-buttons" style="width: 48%;" ng-hide="detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
+ || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required ">
+    <div id="captcha_container" style="background: rgb(245, 222, 179);display: none;padding: 15px;margin: auto;float: none;border: 1px solid black;"></div>
+    <button id="submit-button" class="btn btn-primary" style="width: 35%;padding: 15px;display: block;margin: auto;border: 1px solid black;" ng-click="confirm()">Confirm Order</button>
+    <!--<iframe src="http://script.google.com/macros/s/AKfycbyzLIzmjG4-wv3fYQI4YLxGY8luZCxdPz_4SUY6Yg4/exec"></iframe>-->
+
+</div>
+<script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit" async defer></script>
+<script>
+    var captchaContainer = null;
+    var loadCaptcha = function() {
+        captchaContainer = grecaptcha.render('captcha_container', {
+            'sitekey' : '6LdM2QcTAAAAAHB5rePgdHgGL0kwV0APjM7Vc3bG',
+            'callback' : function(response) {
+                console.log(response);
+                if(response){
+                    $('#submit-button').css("display", "block");
+                    $('#captcha_container').css("display", "none");
+                }
+            }
+        });
+    };
+</script>
+<!--<div style="display: block">-->
+<!--<div style="margin: auto" class="g-recaptcha" data-sitekey="6LdM2QcTAAAAAHB5rePgdHgGL0kwV0APjM7Vc3bG"></div>-->
+<!--</div>-->

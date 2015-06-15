@@ -7,6 +7,18 @@
 
 body {
   padding: 0;
+  /*font-family: 'Cedarville Cursive', cursive;*/
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 150%;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(http://fonts.gstatic.com/s/nunito/v7/cSNs3NwpEgPVRQzvkh3NeQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -51,12 +63,6 @@ body {
   margin: 30px 0;
 }
 
-.mevamasala{
-  font-family: Gloria Hallelujah;
-  font-style: oblique;
-  font-weight: bold;
-}
-
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
@@ -81,8 +87,16 @@ body {
   padding: 5px;
 }
 
+.container.fullwidth{
+  /*max-width: none!important;*/
+  /*width: 100%!important;*/
+}
+
 .thumbnail:hover {
-  border: 1px solid #abd0d9; box-shadow:0 0 20px 0 rgb(61, 154, 217);
+  border: 1px solid rgb(61, 154, 217);
+  -webkit-box-shadow: 0 12px 6px -6px  rgb(61, 154, 217);
+  -moz-box-shadow: 0 12px 6px -6px  rgb(61, 154, 217);
+  box-shadow: 0 12px 6px -6px  rgb(61, 154, 217);
 }
 
 .card-container {
@@ -139,16 +153,16 @@ body {
 .card > .front{
   transform: perspective( 900px ) rotateY( 0deg );
   -webkit-transform: perspective( 900px ) rotateY( 0deg );
-  transition: transform .5s linear 0s;
+  transition: transform .3s linear 0s;
   /*transition: -webkit-transform .5s linear 0s;*/
-  -webkit-transition: -webkit-transform .5s linear 0s;
+  -webkit-transition: -webkit-transform .3s linear 0s;
 }
 .card > .back{
   transform: perspective( 900px ) rotateY( 180deg );
   -webkit-transform: perspective( 900px ) rotateY( 180deg );
-  transition: transform .5s linear 0s;
+  transition: transform .3s linear 0s;
   /*transition: -webkit-transform .5s linear 0s;*/
-  -webkit-transition: -webkit-transform .5s linear 0s;
+  -webkit-transition: -webkit-transform .3s linear 0s;
 }
 .card:hover > .front{
   transform: perspective( 900px ) rotateY( -180deg );
@@ -159,7 +173,59 @@ body {
   -webkit-transform: perspective( 900px ) rotateY( 0deg );
 }
 
+.icon-class{
+  font-size: x-large;position: relative;margin: 0px 5px;
+}
+
+.form-parent label{
+  float: left;
+  margin: 0px;
+}
+
+.form-parent input,.form-parent textarea, .form-parent select {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  border: 1px solid #DDDDDD;
+}
+
+.form-parent input:focus,.form-parent textarea:focus ,.form-parent select:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+.error-red{
+  float: right;color: red;position: absolute;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.form-parent{
+  text-align: center;
+  padding-bottom: 55px;
+}
+.form-parent > input{
+  text-align:left;
+}
+
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+
   .card:hover > .front{
     transform: none;
     -webkit-transform:none;
@@ -167,6 +233,7 @@ body {
   .card:hover > .back{
     transform:none;
     -webkit-transform: none;
+    background-color: transparent!important;
   }
 
   .card > .front{
@@ -182,6 +249,7 @@ body {
     transition: none;
     /*transition: -webkit-transform .5s linear 0s;*/
     -webkit-transition: none;
+    background-color: transparent!important;
   }
 
   #break-div{
@@ -193,12 +261,29 @@ body {
   .item-card-class{
     width: 50%;
     float: left;
+    padding: 0;
   }
 
   .bottom-buttons{
     width: 100% !important;
   }
 
+  .float-class{
+    float: left!important;
+  }
+
+  .mevamasala{
+    font-size: 200%!important;
+    padding-left: 5px!important;
+  }
+
+}
+
+.mevamasala{
+  font-size: 300%;
+}
+.float-class{
+  float: right;
 }
 .bottom-buttons{
   position: fixed;
@@ -216,6 +301,13 @@ body {
 .disable-image{
   opacity: .5;
 }
+
+.disable-div{
+  opacity: .5;
+  pointer-events:none;
+
+}
+
 
 .overflow-class{
   overflow: hidden;white-space: nowrap;text-overflow:ellipsis;
@@ -251,6 +343,9 @@ input[type="text"].focus {
 
 .glyphicon-shopping-cart.rotate-class {
   transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
 }
 
 .default-font{
@@ -275,6 +370,32 @@ div.growlUI h1, div.growlUI h2 {
   color: white; padding: 5px 5px 5px 75px; text-align: left
 }
 
+/* latin */
+@font-face {
+  font-family: 'Cedarville Cursive';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cedarville Cursive'), local('Cedarville-Cursive'), url(http://fonts.gstatic.com/s/cedarvillecursive/v6/cuCe6HrkcqrWTWTUE7dw-9c3lOkTc1IrfN1zKaob-SQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(http://fonts.gstatic.com/s/indieflower/v7/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.table-head{
+  text-align: center;border: 1px solid black !important;background-color: #337ab7!important;color: white;
+}
+
+.header-font{
+  color: #337ab7!important;
+  /*opacity: .7;*/
+  font-weight: bold;
+}
 
 /* Supporting marketing content */
 .marketing {

@@ -1,0 +1,60 @@
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd)	{
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+<div style="padding: 5px">
+    <div ng-if="fb_name" >
+        <h3>Hello {{fb_name}}!</h3>
+        <hr>
+
+    </div>
+    <div style="clear: left">
+    <form name="detailsformuser" class="col-md-8 col-md-offset-2 form-parent" style="padding: 20px;">
+        <div style="display: inline-block;width: 100%;">
+            <input type="email" name="email" placeholder="Enter email" style="display: inline-block;margin-bottom: 0 !important;width: 80%" ng-model="details.email" required>
+            <span ng-hide="detailsformuser.email.$error.email || detailsformuser.email.$error.required" ng-click="getDetails()" class="glyphicon glyphicon-circle-arrow-right" style="font-size: 200%;top: 10px;cursor: pointer"></span>
+            <br>
+            <span class="error-red" ng-show="detailsformuser.email.$error.email">Not valid email!</span>
+            <span class="error-red" ng-show="detailsformuser.email.$error.required">Required!</span>
+        </div>
+    </form>
+    </div>
+    <div style="clear: left;text-align: center">
+        <span  ng-if="outputArr.length == 0 && dupEmail">
+            No orders found for email : <b>{{dupEmail}}</b>
+        </span>
+        <table ng-table class="table">
+            <span >
+                <th ng-if="outputArr.length > 0" class="table-head">Order No.</th>
+                <th ng-if="outputArr.length > 0" class="table-head">Date</th>
+                <th ng-if="outputArr.length > 0" class="table-head">Details</th>
+                <th ng-if="outputArr.length > 0" class="table-head">Delivered?</th>
+                <th ng-if="outputArr.length > 0" class="table-head"></th>
+            </span>
+            <tr ng-repeat="item in outputArr | orderBy:'-Timestamp'">
+
+                <td data-title="'Order No.'">{{item['OrderNo.']}}</td>
+                <td data-title="'Date'">{{item['Timestamp']| date}}</td>
+                <td data-title="'Details'">{{item.OrderDetails}}</td>
+                <td data-title="'Delivered?'">{{item.completed}}</td>
+                <td data-title="'Action'" style="text-align: -webkit-center;text-align:center;cursor: pointer" ng-click="sendOrderEmail(item['OrderNo.'])"><span title="Send details as an email" class="glyphicon glyphicon-inbox"></span></td>
+
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <h4 style="text-align: center;clear: left">
+        To cancel/modify an order, please call at <b style="color: #105cb6">9972175286</b> <br>or<br> drop an email to <b style="color: #105cb6">
+        meva.masala.store@gmail.com
+    </b> .
+    </h4>
+</div>

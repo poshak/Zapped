@@ -19,14 +19,20 @@
 
     <br/>
     <div>
-      <div style="text-align: center" ng-if="!disabledVal">
-        Quantity : <input id="txtboxToFilter" type="number" min="1" max="{{maxval}}" ng-model="count" style="width: 50px">
+      <div style="text-align: center" ng-hide="disabledVal || maxval == 0">
+        <!--Quantity : <input id="txtboxToFilter" type="number" min="1" max="{{maxval}}" ng-model="count" style="width: 50px">-->
+        Quantity : <select ng-model="parent.counter1" ng-options="item as item for item in countArr">
+      </select>
       </div>
       <br>
-    <button ng-disabled="disabledVal" ng-click="addToCart(name,data['Minimum quantity (in grams)'])" class="btn btn-default" style="width: 100%;">
+    <button ng-if="maxval" ng-disabled="disabledVal" ng-click="addToCart(name,data['Minimum quantity (in grams)'])" class="btn btn-default" style="width: 100%;">
         <span ng-if="!disabledVal"><span style="font-size: 25px;">Add to cart </span><span class="glyphicon glyphicon-plus-sign" style="font-size: x-large" ></span></span>
     <span style="font-size: 25px;" ng-if="disabledVal">Added to cart</span>
     </button>
+      <span style="font-size: 15px;text-align: center" ng-if="disabledVal">In order to change the quantity, click on the cart.</span>
+      <div ng-if="!maxval" style="text-align: center;font-size: 25px;">
+        Out of Stock
+      </div>
     </div>
 
     </div>

@@ -11,7 +11,7 @@
 <div style="clear: both">
   <!--<div id="main-img-div" ng-repeat="item in root.filteredItems = data| filter : searchObj |  orderBy: orderByObj | as:this:'filteredItems'">-->
   <div ng-repeat="item in filteredData = (data | filter:searchObj|  orderBy: orderByObj )" >
-    <item-card
+    <item-card style="position: relative"
       image="/images/items/{{item.Name}}.jpg"
       name="{{item.Name}}"
       description="{{item.Description}}"
@@ -19,6 +19,7 @@
       quantity="{{item['Minimum quantity (in grams)']}}"
       place="{{item['Place of Origin']}}"
       func = "onImageLoad(name)"
+      available = "{{item['Total Stock']}}"
       ></item-card>
   </div>
 </div>
