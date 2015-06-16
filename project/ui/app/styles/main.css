@@ -201,7 +201,7 @@ body {
   border: 1px solid rgba(81, 203, 238, 1);
 }
 .error-red{
-  float: right;color: red;position: absolute;
+  float: right;color: red;position: absolute;font-size: smaller;
 }
 
 input[type=number]::-webkit-outer-spin-button,

@@ -110,7 +110,9 @@ app.directive('imgLoad', ['$parse', function($parse) { // Inject $parse
 
 app.run(['$rootScope','webservices','$http','$templateCache', function($rootScope,webservices,$http,$templateCache) {
 
-  FastClick.attach(document.body);
+  $(function() {
+    FastClick.attach(document.body);
+  });
   $rootScope.root = {};
   $rootScope.details = {};
   $rootScope.max_quantity = 5;
