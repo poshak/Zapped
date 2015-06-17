@@ -1,5 +1,5 @@
 <div style="padding: 10px">
-    <hr ng-if="!fb_name">
+    <hr style="margin: 10px 0;" ng-if="!fb_name">
     <div ng-if="fb_name" id="details-element">
         <h3 style="text-align: -webkit-center;color: chocolate;">Hi {{fb_name}} !</h3>
     </div>
@@ -26,21 +26,23 @@
     <br>
     <div style="display: inline-block;width: 100%;">
         <hr>
-        <label>Address : </label><br>
-        <textarea name="address" rows="4" cols="42" placeholder="Address" ng-model="details.address" style="margin-bottom: 0px;width: 100%;" required></textarea>
-        <br>
-        <span class="error-red" ng-show="detailsform.address.$error.required">Required!</span>
-    </div>
-    <br>
-    <div style="display: inline-block;width: 100%;">
-        <hr>
         <label>Locality :</label> <br>
+        <span style="font-size: small;color: #337ab7!important;font-weight: 600;text-align: left;width: 100%;float: left;">(For now, we deliver only in below mentioned areas)</span><br>
         <select style="margin-bottom: 0px;width: 100%;"  ng-options="item as item for item in areaArr" ng-model="details.area">
             <option value="">-- Select Locality --</option>
         </select>
         <br>
         <span class="error-red" ng-show="!details.area">Required!</span>
     </div>
+    <br>
+    <div style="display: inline-block;width: 100%;">
+        <hr>
+        <label>Address : </label><br>
+        <textarea name="address" rows="4" cols="42" placeholder="Address" ng-model="details.address" style="margin-bottom: 0px;width: 100%;" required></textarea>
+        <br>
+        <span class="error-red" ng-show="detailsform.address.$error.required">Required!</span>
+    </div>
+
     <br>
     <hr>
 
@@ -50,8 +52,8 @@
 
 </form>
 
-<div  class="bottom-buttons" style="width: 48%;" ng-hide="detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
- || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required ">
+<div  class="bottom-buttons" style="width: 48%;" ng-class="{'disable-div':(detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
+ || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required )}">
     <div id="captcha_container" style="background: rgb(245, 222, 179);display: none;padding: 15px;margin: auto;float: none;border: 1px solid black;"></div>
     <button id="submit-button" class="btn btn-primary" style="width: 35%;padding: 15px;display: block;margin: auto;border: 1px solid black;" ng-click="confirm()">Confirm Order</button>
     <!--<iframe src="http://script.google.com/macros/s/AKfycbyzLIzmjG4-wv3fYQI4YLxGY8luZCxdPz_4SUY6Yg4/exec"></iframe>-->

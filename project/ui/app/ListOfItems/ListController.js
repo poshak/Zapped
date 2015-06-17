@@ -19,6 +19,12 @@ app.controller('ListController',function($scope,$stateParams,webservices,$rootSc
   }
 
   $scope.root.header = $stateParams.type;
+    if( $scope.root.header == 'spice'){
+        $scope.root.header = 'SPICES';
+    }
+    if( $scope.root.header == 'dryfruit'){
+        $scope.root.header = 'DRY FRUITS';
+    }
 
   $scope.searchObj = {
     'Category' : $stateParams.type

@@ -1,24 +1,15 @@
 'use strict';
-
-/**
- * @ngdoc overview
- * @name uiApp
- * @description
- * # uiApp
- *
- * Main module of the application.
- */
 var app = angular
   .module('app', [
     'ngAnimate',
-    'ngCookies',
-    'ngResource',
+    //'ngCookies',
+    //'ngResource',
     'ui.router',
-    'ngSanitize',
-    'ngTouch',
-      'pascalprecht.translate'
+    //'ngSanitize',
+    //'ngTouch',
+    //  'pascalprecht.translate'
   ]);
-app.config(function ($stateProvider, $urlRouterProvider,$translateProvider,$httpProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
 //routing
 //  $httpProvider.defaults.useXDomain = true;
 //  $httpProvider.defaults.withCredentials = true;
@@ -83,14 +74,14 @@ app.config(function ($stateProvider, $urlRouterProvider,$translateProvider,$http
   $urlRouterProvider.otherwise('/home');
 
   //translate
-  $translateProvider.translations('en', {
-    'PRODUCT_NAME':'Meva Masala',
-    'Tagline':'The Secret Ingredient',
-    'spice':'SPICES',
-    'dryfruit':'DRY FRUITS'
-  });
-  $translateProvider.preferredLanguage('en');
-  $translateProvider.useSanitizeValueStrategy('escaped');
+  //$translateProvider.translations('en', {
+  //  'PRODUCT_NAME':'Meva Masala',
+  //  'Tagline':'The Secret Ingredient',
+  //  'spice':'SPICES',
+  //  'dryfruit':'DRY FRUITS'
+  //});
+  //$translateProvider.preferredLanguage('en');
+  //$translateProvider.useSanitizeValueStrategy('escaped');
   });
 
 app.directive('imgLoad', ['$parse', function($parse) { // Inject $parse
@@ -302,7 +293,7 @@ app.run(['$rootScope','webservices','$http','$templateCache', function($rootScop
     console.log('End template loading : '+new Date());
   }, 10000);
 
-
+$('#count-id').css('display','block');
 
 }]);
 

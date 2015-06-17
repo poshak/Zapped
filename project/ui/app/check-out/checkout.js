@@ -14,14 +14,23 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
         }
     });
 
-$scope.areaArr = [
-    'IndiraNagar',
-    'Jeeva Bheema Nagar',
-    'Tippasandra/GM Palya',
-    'Mallespalya/Kaggadaspura',
-    'Mahadevapura',
-    'Garudacharpalya/BMP'
-];
+//$scope.areaArr = [
+//    'IndiraNagar',
+//    'Jeeva Bheema Nagar',
+//    'Tippasandra/GM Palya',
+//    'Mallespalya/Kaggadaspura',
+//    'Mahadevapura',
+//    'Garudacharpalya/BMP'
+//];
+
+    $scope.areaArr = [
+        'Garudacharpalya/BMP',
+        'Mahadevapura',
+        'Mallespalya/Kaggadaspura',
+        'Tippasandra/GM Palya',
+        'Jeeva Bheema Nagar',
+        'IndiraNagar'
+    ];
 
     //$rootScope.details.email = 'poshak@hp.com';
     //$rootScope.details.phone = 1111111111;

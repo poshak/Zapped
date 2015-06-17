@@ -25,6 +25,11 @@ handlers:
   mime_type: text/css
   static_files: ui/app/styles/\1
   upload: ui/app/styles/(.*\.css)
+
+- url: /dist/(.*\.css)
+  mime_type: text/css
+  static_files: ui/app/dist/\1
+  upload: ui/app/dist/(.*\.css)
    
 - url: /(.*\.html)
   mime_type: text/html

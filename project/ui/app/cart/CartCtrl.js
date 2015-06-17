@@ -1,4 +1,4 @@
-app.controller('CartCtrl',function($scope,$translate,$stateParams,webservices,$rootScope,$location){
+app.controller('CartCtrl',function($scope,$stateParams,webservices,$rootScope,$location){
     $scope.hide = false;
     $scope.deleteItem = function(index){
         if(confirm('Are you sure you want to delete '+$rootScope.root.cart[index].Name+'?')){

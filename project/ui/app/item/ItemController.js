@@ -1,4 +1,4 @@
-app.controller('ItemCtrl',function($scope,$translate,$stateParams,webservices,$rootScope){
+app.controller('ItemCtrl',function($scope,$stateParams,webservices,$rootScope){
   var max_quantity = $rootScope.max_quantity ;
   $scope.parent = {};
 
