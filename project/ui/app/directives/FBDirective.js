@@ -1,3 +1,23 @@
+
+$('#fbicon').click(function() {
+    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    var win
+    if(width > 768){
+        win = window.open("https://www.facebook.com/pages/MevaMasala/108745912794003", '_blank');
+        win.focus()
+    }else{
+        var now = new Date().valueOf();
+        setTimeout(function () {
+            if (new Date().valueOf() - now > 100) return;
+            window.location = "https://m.facebook.com/profile.php?id=108745912794003";
+            //win = window.open("https://m.facebook.com/profile.php?id=108745912794003", '_blank');
+            //win.focus()
+        }, 25);
+            window.location = "fb://page/108745912794003";
+    }
+   ;
+});
+
 var uservar = null;
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response,$rootScope) {
@@ -8,7 +28,7 @@ function statusChangeCallback(response,$rootScope) {
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
-        $.unblockUI();
+        //$.unblockUI();
         // Logged into your app and Facebook.
         testAPI();
     } else if (response.status === 'not_authorized') {
@@ -56,15 +76,29 @@ window.fbAsyncInit = function() {
     $("#fb-button").css("display", "block");
     $("#fb-button-span").innerHTML = "Login using Facebook";
 
-
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
     });
     FB.Event.subscribe('edge.create',
         function(response) {
-            alert('liked');
+            $('#couponpage-text').html("Use coupon 'MM05' at check out and get 5% discount.");
+            showCoupon();
         }
     );
+    FB.Event.subscribe('edge.remove', function(targetUrl, elm) {
+        $('#couponpage-text').html("Login with Facebook and like our page to get 5% discount coupon.");
+    });
+
+    if(sessionStorage.getItem('xyz') == 'true'){
+
+    }else{
+        setTimeout(function(){
+            showCoupon();
+            sessionStorage.setItem('xyz', 'true');
+        },20000);
+    }
+
+
 
 };
 
@@ -81,6 +115,8 @@ window.fbAsyncInit = function() {
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
+    $('#fb-button').css('display','none');
+    $('#fb-button1').css('display','none');
     FB.api('/me', function(response) {
         var $body = angular.element(document.body);            // 1
         var $rootScope = $body.injector().get('$rootScope');   // 2b
@@ -93,18 +129,56 @@ function testAPI() {
         document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
     });
-    FB.api('/me/likes/108745912794003', {limit: 1}, function(r) {
-        if (r.data.length == 1) {
-            alert('already liked');
-        } else {
-            console.log('not liked');
-        }
-    });
 
-    FB.api('/me/likes/1591070074488697', function(response) {
+    FB.api('/me/likes/108745912794003', function(response) {
         console.log(response.data);
-        if(response.length > 0){
-            alert('already liked');
+        if(response.data.length > 0){
+            $('#couponpage-text').html("Use coupon 'MM05' at check out and get 5% discount.");
+            console.log('already liked');
         }
     });
 }
+var showCoupon =  function(){
+    //$('#couponpage');
+    if($('#couponpage').css('display') == 'table'){
+        return;
+    }
+    $(document).ready(function() {
+        scrollToID('main-container');
+        $.blockUI({ message: null });
+        $('.blockUI').css('z-index',10000);
+        $('.blockOverlay').attr('title','Click to unblock').click(function() {
+            $('#couponpage').css('display','none');
+            $.unblockUI();
+            return false;
+        });
+        $(document).on('click touchend', '#closeBox', function() {
+            closePop();
+        });
+        $('#couponpage').css('display','table');
+    });
+}
+
+var scrollToID = function goToByScroll(id){
+    // Remove "link" from the ID
+    id = id.replace('link', '');
+    // Scroll
+    jQuery('html,body').animate({
+            scrollTop: jQuery('#'+id).offset().top},
+        'slow');
+};
+
+
+var closePop = function(){
+    $('#couponpage').css('display','none');
+    $.unblockUI();
+    return false;
+}
+
+$(document).on('click', '#closeBox', function() {
+    closePop();
+});
+
+$(document).on('click', '#offers', function() {
+    showCoupon();
+});

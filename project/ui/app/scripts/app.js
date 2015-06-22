@@ -130,15 +130,6 @@ app.run(['$rootScope','webservices','$http','$templateCache', function($rootScop
 
   }
 
-  var scrollToID = function goToByScroll(id){
-    // Remove "link" from the ID
-    id = id.replace('link', '');
-    // Scroll
-    jQuery('html,body').animate({
-        scrollTop: jQuery('#'+id).offset().top},
-      'slow');
-  };
-
   var key_arr =["Name",	"Category",	"Description",	"Place of Origin",	"Minimum quantity (in grams)",	"Price_per_Minimum_quantity",	"Total Stock",	"Items_Sold",	"Image"];
   var showNotification ;
 
@@ -289,6 +280,7 @@ app.run(['$rootScope','webservices','$http','$templateCache', function($rootScop
     $http.get('directives/ItemCard/Item-Card.html', {cache:$templateCache});
     $http.get('directives/CartItemCard/CartItemCard.html', {cache:$templateCache});
     $http.get('directives/FlipCard/Flip-Card.html', {cache:$templateCache});
+    $http.get('images/loading.gif', {cache:$templateCache});
 
     console.log('End template loading : '+new Date());
   }, 10000);

@@ -1,10 +1,24 @@
 <div style="padding: 10px">
     <hr style="margin: 10px 0;" ng-if="!fb_name">
     <div ng-if="fb_name" id="details-element">
-        <h3 style="text-align: -webkit-center;color: chocolate;">Hi {{fb_name}} !</h3>
+        <h4 style="text-align: -webkit-center;color: chocolate;margin: 0;">Hi {{fb_name}} !</h4>
     </div>
 </div>
 
+<div id="amount-div" style="clear: left;display: table;" class="col-md-8 col-md-offset-2">
+    <div style="float: left;display: inline-block;width: 60%;padding-left: 5px">
+        <h4 style="margin-bottom: 0px">Amount : Rs. {{price1}}</h4>
+        <a style="font-size: small;" href="#/cart">View Summary</a>
+    </div>
+    <div style="float: right;display: inline-block;width: 40%;margin-top: 10px;">
+<div style="float: right">
+        <input size="7" type="text" name="coupon" placeholder="Coupon" style="clear: left;display: inline-block;margin-bottom: 0 !important;float: left;" ng-model="coupon">
+        <button style="float: left;padding: 6px 3px" class="btn btn-primary">Go!</button>
+        <h6 style="clear: left;float: left;margin: 0px">Have coupon?</h6>
+</div>
+    </div>
+</div>
+<br style="clear: left">
 <form name="detailsform" class="col-md-8 col-md-offset-2 form-parent">
     <div style="display: inline-block;width: 100%;">
         <label>Email :</label> <br>
@@ -15,7 +29,7 @@
     </div>
     <br>
     <span style="display: inline-block;width: 100%;position: relative;">
-        <hr>
+        <hr style="margin-bottom: 5px;">
         <label>Phone number :</label> <br>
 <input ng-required="true" type="number" name="phone" ng-minlength="10" ng-maxlength="10" placeholder="Phone" size="10" style="width: 100%;padding-left: 55px;margin-bottom: 0 !important;" ng-model="details.phone" required>
         <span style="outline: none;padding: 10px;border-radius: 5px;border: 1px solid #DDDDDD;margin-left: 10px;margin-bottom: 0 !important;position: absolute;bottom: 0px;left: 0px"  >+91</span>
@@ -25,9 +39,9 @@
         </span>
     <br>
     <div style="display: inline-block;width: 100%;">
-        <hr>
-        <label>Locality :</label> <br>
-        <span style="font-size: small;color: #337ab7!important;font-weight: 600;text-align: left;width: 100%;float: left;">(For now, we deliver only in below mentioned areas)</span><br>
+        <hr style="margin-bottom: 5px;">
+        <label>Locality :</label>
+        <span style="font-size: small;color: #337ab7!important;font-weight: 600;text-align: left;width: 100%;">(As of now ,we deliver in these localities)</span><br>
         <select style="margin-bottom: 0px;width: 100%;"  ng-options="item as item for item in areaArr" ng-model="details.area">
             <option value="">-- Select Locality --</option>
         </select>
@@ -36,7 +50,7 @@
     </div>
     <br>
     <div style="display: inline-block;width: 100%;">
-        <hr>
+        <hr style="margin-bottom: 5px;">
         <label>Address : </label><br>
         <textarea name="address" rows="4" cols="42" placeholder="Address" ng-model="details.address" style="margin-bottom: 0px;width: 100%;" required></textarea>
         <br>
@@ -44,7 +58,7 @@
     </div>
 
     <br>
-    <hr>
+    <hr style="margin-bottom: 5px;">
 
     <!--<div style="margin: auto;width:100% ; display:inline-block" class="g-recaptcha" data-sitekey="6LdM2QcTAAAAAHB5rePgdHgGL0kwV0APjM7Vc3bG">-->
 

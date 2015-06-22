@@ -23,6 +23,17 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
 //    'Garudacharpalya/BMP'
 //];
 
+    $scope.price1 = 0 ;
+    for(var x in $rootScope.root.cart){
+        var obj = $rootScope.root.cart[x];
+        if(obj && obj.Name && obj.Quantity) {
+            $scope.price1 = $scope.price1 + (parseInt(obj.Price_per_Minimum_quantity) * parseInt(obj.Quantity));
+        }
+
+    }
+
+    console.log( $scope.price1);
+
     $scope.areaArr = [
         'Garudacharpalya/BMP',
         'Mahadevapura',
