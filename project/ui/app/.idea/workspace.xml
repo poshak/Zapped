@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eddbe608-8c96-447c-839c-5975d450b6e5" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\dryfruits1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\dryfruits12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\images.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\masale-old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\misc1.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/FBDirective.js" afterPath="$PROJECT_DIR$/directives/FBDirective.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/FlipCard/Flip-Card.html" afterPath="$PROJECT_DIR$/directives/FlipCard/Flip-Card.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/ItemCard/Item-Card.html" afterPath="$PROJECT_DIR$/directives/ItemCard/Item-Card.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/about.html" afterPath="$PROJECT_DIR$/about/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app.js" afterPath="$PROJECT_DIR$/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cart/cart.html" afterPath="$PROJECT_DIR$/cart/cart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check-out/check-out.html" afterPath="$PROJECT_DIR$/check-out/check-out.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check-out/checkout.js" afterPath="$PROJECT_DIR$/check-out/checkout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/home.html" afterPath="$PROJECT_DIR$/home/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main.css" afterPath="$PROJECT_DIR$/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/user.html" afterPath="$PROJECT_DIR$/user/user.html" />
@@ -43,8 +32,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.232143">
-              <caret line="171" column="9" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="9" />
+            <state vertical-scroll-proportion="-1.1964285">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -87,10 +76,11 @@
       <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cart/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.232143">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="42" />
+            <state vertical-scroll-proportion="-7.0">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -107,13 +97,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="check-out.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="check-out.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check-out/check-out.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.022880215">
+              <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#hr#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -125,15 +114,30 @@
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h6#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#br#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#span#0;n#form#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#span#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#span#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#span#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#span#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#span#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#span#2;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#2;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#span#2;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#3;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#span#3;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#3;n#form#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#hr#0;n#form#0;n#!!top" expanded="true" />
-                <marker date="1434978322226" expanded="true" signature="3906:4228" placeholder="{...}" />
+                <element signature="n#style#0;n#span#4;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <marker date="1435269841091" expanded="true" signature="4932:5264" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -142,13 +146,17 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#1;n#h4#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -159,18 +167,18 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="246" column="3" selection-start-line="246" selection-start-column="3" selection-end-line="246" selection-end-column="3" />
+            <state vertical-scroll-proportion="-17.833334">
+              <caret line="211" column="29" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/check-out/checkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22868742">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="163" column="71" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -226,11 +234,11 @@
         <option value="$PROJECT_DIR$/scripts/app.js" />
         <option value="$PROJECT_DIR$/directives/FBDirective.js" />
         <option value="$PROJECT_DIR$/cart/cart.html" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/user/user.html" />
-        <option value="$PROJECT_DIR$/styles/main.css" />
-        <option value="$PROJECT_DIR$/check-out/check-out.html" />
         <option value="$PROJECT_DIR$/check-out/checkout.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/styles/main.css" />
+        <option value="$PROJECT_DIR$/user/user.html" />
+        <option value="$PROJECT_DIR$/check-out/check-out.html" />
       </list>
     </option>
   </component>
@@ -844,35 +852,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.232143">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="42" />
+        <state vertical-scroll-proportion="-7.0">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#1;n#h4#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="246" column="3" selection-start-line="246" selection-start-column="3" selection-end-line="246" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,10 +870,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/check-out/checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="163" column="71" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.232143">
-          <caret line="171" column="9" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="9" />
+        <state vertical-scroll-proportion="-1.1964285">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -926,12 +920,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check-out/check-out.html">
+    <entry file="file://$PROJECT_DIR$/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+        <state vertical-scroll-proportion="-17.833334">
+          <caret line="211" column="29" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#1;n#h4#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check-out/check-out.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022880215">
+          <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
+          <folding>
             <element signature="n#style#0;n#hr#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -943,24 +963,31 @@
             <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h6#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#br#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#span#0;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#span#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#span#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#span#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#span#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#span#3;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#3;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#hr#0;n#form#0;n#!!top" expanded="true" />
-            <marker date="1434978322226" expanded="true" signature="3906:4228" placeholder="{...}" />
+            <element signature="n#style#0;n#span#4;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <marker date="1435269841091" expanded="true" signature="4932:5264" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/check-out/checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22868742">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -1,32 +1,35 @@
-<div style="padding: 10px">
+<div>
     <hr style="margin: 10px 0;" ng-if="!fb_name">
     <div ng-if="fb_name" id="details-element">
         <h4 style="text-align: -webkit-center;color: chocolate;margin: 0;">Hi {{fb_name}} !</h4>
     </div>
 </div>
 
-<div id="amount-div" style="clear: left;display: table;" class="col-md-8 col-md-offset-2">
-    <div style="float: left;display: inline-block;width: 60%;padding-left: 5px">
-        <h4 style="margin-bottom: 0px">Amount : Rs. {{price1}}</h4>
+<div id="amount-div" class="alert alert-info" style="clear: left;display: table;padding-bottom: 10px;border: 1px solid;margin-bottom: 0px;width: 100% !important;" class="col-md-10 col-md-offset-1">
+    <div style="float: left;display: inline-block;width: 60%;padding-left: 5px;margin-top: 10px;">
+        <h4 style="margin-bottom: 0px">Amount: Rs.<span ng-class="{'new-price-cls':hideCoupon}">{{price}}</span></h4>
         <a style="font-size: small;" href="#/cart">View Summary</a>
     </div>
     <div style="float: right;display: inline-block;width: 40%;margin-top: 10px;">
-<div style="float: right">
-        <input size="7" type="text" name="coupon" placeholder="Coupon" style="clear: left;display: inline-block;margin-bottom: 0 !important;float: left;" ng-model="coupon">
-        <button style="float: left;padding: 6px 3px" class="btn btn-primary">Go!</button>
+<div style="float: right" ng-hide="hideCoupon">
+        <input ng-model="root.coupon" size="7" type="text" name="coupon" placeholder="Coupon" style="clear: left;display: inline-block;margin-bottom: 0 !important;float: left;-webkit-transition: all .3s ease-in-out;-moz-transition: all .3s ease-in-out;-ms-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out;border-radius: 5px;border: 1px solid #DDD;" ng-model="coupon">
+        <button style="float: left;padding: 6px 3px" class="btn btn-primary" ng-click="applyCoupon()">Go!</button>
         <h6 style="clear: left;float: left;margin: 0px">Have coupon?</h6>
 </div>
+        <div ng-show="hideCoupon" style="text-align: center;font-size: small">
+            '{{root.coupon}}' applied.<br>You get 5% discount.
+        </div>
     </div>
 </div>
 <br style="clear: left">
 <form name="detailsform" class="col-md-8 col-md-offset-2 form-parent">
-    <div style="display: inline-block;width: 100%;">
+    <span style="display: inline-block;width: 100%;position: relative;">
         <label>Email :</label> <br>
         <input type="email" name="email" placeholder="Email" style="display: inline-block;margin-bottom: 0 !important;width: 100%" ng-model="details.email" required>
             <br>
-        <span class="error-red" ng-show="detailsform.email.$error.email">Not valid email!</span>
-        <span class="error-red" ng-show="detailsform.email.$error.required">Required!</span>
-    </div>
+        <span class="error-red" style="bottom: -25%;left: 50%;" ng-show="detailsform.email.$error.email">Not valid email!</span>
+        <span class="error-red" style="bottom: -25%;left: 50%;" ng-show="detailsform.email.$error.required">Required!</span>
+    </span>
     <br>
     <span style="display: inline-block;width: 100%;position: relative;">
         <hr style="margin-bottom: 5px;">
@@ -38,41 +41,44 @@
             <span class="error-red" style="bottom: -18%;left: 50%;" ng-show="((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) ">Number should be 10 digits</span>
         </span>
     <br>
-    <div style="display: inline-block;width: 100%;">
+    <span style="display: inline-block;width: 100%;position: relative;">
         <hr style="margin-bottom: 5px;">
         <label>Locality :</label>
-        <span style="font-size: small;color: #337ab7!important;font-weight: 600;text-align: left;width: 100%;">(As of now ,we deliver in these localities)</span><br>
+        <span style="margin-top: 10px;font-size: small;color: #337ab7!important;font-weight: 600;text-align: left;width: 100%;">(As of now ,we deliver in these localities)</span><br>
         <select style="margin-bottom: 0px;width: 100%;"  ng-options="item as item for item in areaArr" ng-model="details.area">
             <option value="">-- Select Locality --</option>
         </select>
         <br>
-        <span class="error-red" ng-show="!details.area">Required!</span>
-    </div>
+        <span  style="bottom: -18%;left: 50%;" class="error-red" ng-show="!details.area">Required!</span>
+    </span>
     <br>
-    <div style="display: inline-block;width: 100%;">
+    <span style="display: inline-block;width: 100%;position: relative;">
         <hr style="margin-bottom: 5px;">
         <label>Address : </label><br>
         <textarea name="address" rows="4" cols="42" placeholder="Address" ng-model="details.address" style="margin-bottom: 0px;width: 100%;" required></textarea>
         <br>
-        <span class="error-red" ng-show="detailsform.address.$error.required">Required!</span>
-    </div>
+        <span class="error-red"  style="bottom: -12%;left: 50%;" ng-show="detailsform.address.$error.required">Required!</span>
+    </span>
 
     <br>
     <hr style="margin-bottom: 5px;">
-
+    <span style="float: left;text-align: center;padding: 10px;">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        Order will be delivered on or before : '{{deliverydate.toDateString()}}'
+    </span>
     <!--<div style="margin: auto;width:100% ; display:inline-block" class="g-recaptcha" data-sitekey="6LdM2QcTAAAAAHB5rePgdHgGL0kwV0APjM7Vc3bG">-->
 
     <!--</div>-->
+    <div  class="bottom-buttons" style="position:relative;bottom: inherit;padding: 10px" ng-class="{'disable-div':(detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
+ || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required || !price )}">
+        <div id="captcha_container" style="background: rgb(245, 222, 179);display: none;padding: 15px;margin: auto;float: none;border: 1px solid black;"></div>
+        <button id="submit-button" class="btn btn-primary" style="padding: 15px;display: block;margin: auto;border: 1px solid black;" ng-click="confirm()">Confirm Order</button>
+        <!--<iframe src="http://script.google.com/macros/s/AKfycbyzLIzmjG4-wv3fYQI4YLxGY8luZCxdPz_4SUY6Yg4/exec"></iframe>-->
 
+    </div>
 </form>
 
-<div  class="bottom-buttons" style="width: 48%;" ng-class="{'disable-div':(detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
- || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required )}">
-    <div id="captcha_container" style="background: rgb(245, 222, 179);display: none;padding: 15px;margin: auto;float: none;border: 1px solid black;"></div>
-    <button id="submit-button" class="btn btn-primary" style="width: 35%;padding: 15px;display: block;margin: auto;border: 1px solid black;" ng-click="confirm()">Confirm Order</button>
-    <!--<iframe src="http://script.google.com/macros/s/AKfycbyzLIzmjG4-wv3fYQI4YLxGY8luZCxdPz_4SUY6Yg4/exec"></iframe>-->
 
-</div>
 <script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit" async defer></script>
 <script>
     var captchaContainer = null;

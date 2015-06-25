@@ -1,4 +1,4 @@
-app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,$location){
+app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,$location,$rootScope){
     sessionStorage.setItem('cartObject', JSON.stringify($rootScope.root.cart));
     $rootScope.$watch('fb_name', function (newval,oldval) {
         if(!newval){
@@ -14,6 +14,29 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
         }
     });
 
+    if(!$rootScope.root){
+        $rootScope.root = {};
+    }
+    if(!$rootScope.root.coupon){
+        $rootScope.root.coupon = '';
+    }
+
+    var today = new Date();
+    $scope.deliverydate = new Date();
+    var numDate = today.getDay();
+    if(numDate == 0)
+    {
+        $scope.deliverydate.setDate(today.getDate() + 7);
+    }
+    else if(numDate == 6)
+    {
+        $scope.deliverydate.setDate(today.getDate() + 8);
+    }
+    else
+    {
+        $scope.deliverydate.setDate(today.getDate() + (7-numDate));
+    }
+
 //$scope.areaArr = [
 //    'IndiraNagar',
 //    'Jeeva Bheema Nagar',
@@ -23,16 +46,33 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
 //    'Garudacharpalya/BMP'
 //];
 
-    $scope.price1 = 0 ;
+    $scope.price = 0 ;
     for(var x in $rootScope.root.cart){
         var obj = $rootScope.root.cart[x];
         if(obj && obj.Name && obj.Quantity) {
-            $scope.price1 = $scope.price1 + (parseInt(obj.Price_per_Minimum_quantity) * parseInt(obj.Quantity));
+            $scope.price = $scope.price + (parseInt(obj.Price_per_Minimum_quantity) * parseInt(obj.Quantity));
         }
 
     }
 
-    console.log( $scope.price1);
+    if($rootScope.hideCoupon){
+        $scope.price *= (1-$rootScope.hideCoupon);
+        $scope.price = Math.floor($scope.price);
+    }
+
+    console.log( $scope.price);
+
+    $scope.applyCoupon = function(){
+        if($rootScope.root.coupon.toLowerCase() == 'mm05'){
+            $rootScope.hideCoupon = .05;
+            $scope.price *= (1-$rootScope.hideCoupon);
+            $scope.price = Math.floor($scope.price);
+            alert('Applied!\nNew price is : Rs.'+ $scope.price);
+        }else{
+            alert('Not a valid code');
+            $rootScope.root.coupon = '';
+        }
+    }
 
     $scope.areaArr = [
         'Garudacharpalya/BMP',
@@ -88,7 +128,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
     }
 
     var applyDiscount = function(price){
-        return 'Rs.' + price ;
+        return 'Rs.' + Math.floor(parseInt(price)*(1-$rootScope.hideCoupon)) ;
     }
     $scope.confirm = function(){
         if($rootScope.root.cart.length <= 0){
@@ -121,6 +161,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
         }
         url = url + '&OrderDetails='+JSON.stringify(outputObj);
         url = url + '&Amount='+applyDiscount(price);
+        url = url + '&DeliveryDate='+$scope.deliverydate.toDateString();
         if(price == 0){
             alert("Cart is Empty!");
             $location.path('/list');

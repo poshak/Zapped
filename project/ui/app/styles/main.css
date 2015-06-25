@@ -207,12 +207,14 @@ body {
   border-radius: 5px;
   margin: 10px;
   border: 1px solid #DDDDDD;
+  width: 90% !important;
+  float: left !important;
+  margin-top: 0px !important; ;
 }
 
 .form-parent input:focus,.form-parent textarea:focus ,.form-parent select:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
   padding: 10px;
-  margin: 10px;
   border: 1px solid rgba(81, 203, 238, 1);
 }
 .error-red{
@@ -234,7 +236,7 @@ input[type=number] {
 
 .form-parent{
   text-align: center;
-  padding-bottom: 48px;
+  /*padding-bottom: 48px;*/
 }
 .form-parent > input{
   text-align:left;
@@ -321,6 +323,11 @@ input[type=number] {
   padding: 0px;
   bottom: 48px;
 
+}
+
+.new-price-cls{
+  font-weight: bold;
+  color: chocolate;
 }
 
 .cost-class{

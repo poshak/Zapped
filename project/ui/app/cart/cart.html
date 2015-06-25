@@ -21,7 +21,7 @@
         <div class="bottom-buttons" style="width: 48%;" ng-show="root.cart && root.cart.length > 0">
             <button class="btn btn-success" ng-click="takeToCheckOut()" style="width: 35%;margin: 0px;float: right;margin-right: 2px;border: 1px solid black;">
                 <!--<a ng-href="#/checkout" style="display: block;color: white">-->
-                    <span ng-hide="hide" style="color: black;font-weight: bold">Total:<span>Rs.&nbsp;{{root.total| number : fractionSize}}</span></span><br>
+                    <span ng-hide="hide" style="color: black;font-weight: bold">Total:<span>Rs.{{root.total| number : fractionSize}}</span></span><br>
                     <b>Place Order</b>
                 <!--</a>-->
             </button>
