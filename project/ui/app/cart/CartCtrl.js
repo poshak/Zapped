@@ -1,4 +1,7 @@
-app.controller('CartCtrl',function($scope,$stateParams,webservices,$rootScope,$location){
+app.controller('CartCtrl',function($scope,$stateParams,webservices,$rootScope,$location,$window){
+    $rootScope.$on('$routeChangeSuccess', function(event) {
+        $window.ga('send', 'pageview', { page: $location.url() });
+    });
     $scope.hide = false;
     $scope.deleteItem = function(index){
         if(confirm('Are you sure you want to delete '+$rootScope.root.cart[index].Name+'?')){

@@ -3,19 +3,17 @@ $('#fbicon').click(function() {
     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
     var win
     if(width > 768){
-        win = window.open("https://www.facebook.com/pages/MevaMasala/108745912794003", '_blank');
+        win = window.open("https://www.facebook.com/mevamasalastore", '_blank');
         win.focus()
     }else{
         var now = new Date().valueOf();
         setTimeout(function () {
             if (new Date().valueOf() - now > 100) return;
-            window.location = "https://m.facebook.com/profile.php?id=108745912794003";
-            //win = window.open("https://m.facebook.com/profile.php?id=108745912794003", '_blank');
-            //win.focus()
-        }, 25);
-            window.location = "fb://page/108745912794003";
+            window.location = "https://m.facebook.com/mevamasalastore";
+        }, 100);
+        window.location = "fb://page/108745912794003";
     }
-   ;
+    ;
 });
 
 var uservar = null;
@@ -82,7 +80,7 @@ window.fbAsyncInit = function() {
     FB.Event.subscribe('edge.create',
         function(response) {
             $('#couponpage-text').html("Use coupon 'MM05' at check out and get 5% discount.");
-            showCoupon();
+            showCoupon('couponpage');
         }
     );
     FB.Event.subscribe('edge.remove', function(targetUrl, elm) {
@@ -93,7 +91,7 @@ window.fbAsyncInit = function() {
 
     }else{
         setTimeout(function(){
-            showCoupon();
+            showCoupon('couponpage');
             sessionStorage.setItem('xyz', 'true');
         },20000);
     }
@@ -138,9 +136,8 @@ function testAPI() {
         }
     });
 }
-var showCoupon =  function(){
-    //$('#couponpage');
-    if($('#couponpage').css('display') == 'table'){
+var showCoupon =  function(str){
+    if($('#'+str).css('display') == 'table'){
         return;
     }
     $(document).ready(function() {
@@ -148,16 +145,17 @@ var showCoupon =  function(){
         $.blockUI({ message: null });
         $('.blockUI').css('z-index',10000);
         $('.blockOverlay').attr('title','Click to unblock').click(function() {
-            $('#couponpage').css('display','none');
+            $('#'+str).css('display','none');
             $.unblockUI();
             return false;
         });
+        $('#'+str).css('display','table');
         $(document).on('click touchend', '#closeBox', function() {
-            closePop();
+            closePop(str);
         });
-        $('#couponpage').css('display','table');
+
     });
-}
+};
 
 var scrollToID = function goToByScroll(id){
     // Remove "link" from the ID
@@ -169,16 +167,12 @@ var scrollToID = function goToByScroll(id){
 };
 
 
-var closePop = function(){
-    $('#couponpage').css('display','none');
+var closePop = function(str){
+    $('#'+str).css('display','none');
     $.unblockUI();
     return false;
 }
 
-$(document).on('click', '#closeBox', function() {
-    closePop();
-});
-
 $(document).on('click', '#offers', function() {
-    showCoupon();
+    showCoupon('couponpage');
 });

@@ -8,7 +8,9 @@
 <div id="amount-div" class="alert alert-info" style="clear: left;display: table;padding-bottom: 10px;border: 1px solid;margin-bottom: 0px;width: 100% !important;" class="col-md-10 col-md-offset-1">
     <div style="float: left;display: inline-block;width: 60%;padding-left: 5px;margin-top: 10px;">
         <h4 style="margin-bottom: 0px">Amount: Rs.<span ng-class="{'new-price-cls':hideCoupon}">{{price}}</span></h4>
-        <a style="font-size: small;" href="#/cart">View Summary</a>
+        <span class="error-red" style="clear: left!important;float: left!important;position: relative" ng-hide="price >= 300">Minimum order amount: Rs.300</span>
+        <a style="font-size: small;float: left;clear: left!important" href="#/cart">View Summary</a>
+
     </div>
     <div style="float: right;display: inline-block;width: 40%;margin-top: 10px;">
 <div style="float: right" ng-hide="hideCoupon">
@@ -62,15 +64,19 @@
 
     <br>
     <hr style="margin-bottom: 5px;">
-    <span style="float: left;text-align: center;padding: 10px;">
+    <span style="float: left;text-align: left;">
         <span class="glyphicon glyphicon-info-sign"></span>
-        Order will be delivered on or before : '{{deliverydate.toDateString()}}'
+        Order will be delivered on or before:'{{deliverydate.toDateString()}}'
+    </span>
+    <span style="float: left;text-align: left;clear: left">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        Cash On Delivery only!
     </span>
     <!--<div style="margin: auto;width:100% ; display:inline-block" class="g-recaptcha" data-sitekey="6LdM2QcTAAAAAHB5rePgdHgGL0kwV0APjM7Vc3bG">-->
 
     <!--</div>-->
-    <div  class="bottom-buttons" style="position:relative;bottom: inherit;padding: 10px" ng-class="{'disable-div':(detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
- || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required || !price )}">
+    <div  class="bottom-buttons" style="clear: left;position:relative;bottom: inherit;padding: 10px" ng-class="{'disable-div':(detailsform.email.$error.email || detailsform.email.$error.required ||detailsform.phone.$error.required || detailsform.phone.$error.number
+ || ((detailsform.phone.$error.minlength || detailsform.phone.$error.maxlength) && detailsform.phone.$dirty) || !details.area || detailsform.address.$error.required || !price || !(price >= 300) )}">
         <div id="captcha_container" style="background: rgb(245, 222, 179);display: none;padding: 15px;margin: auto;float: none;border: 1px solid black;"></div>
         <button id="submit-button" class="btn btn-primary" style="padding: 15px;display: block;margin: auto;border: 1px solid black;" ng-click="confirm()">Confirm Order</button>
         <!--<iframe src="http://script.google.com/macros/s/AKfycbyzLIzmjG4-wv3fYQI4YLxGY8luZCxdPz_4SUY6Yg4/exec"></iframe>-->

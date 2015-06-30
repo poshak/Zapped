@@ -1,5 +1,8 @@
 app.controller('userctrl',function($scope,$stateParams,$rootScope,$window){
 
+    $rootScope.$on('$routeChangeSuccess', function(event) {
+        $window.ga('send', 'pageview', { page: $location.url() });
+    });
     $scope.allUserData = [];
 
     $rootScope.$watch('fb_name', function (newval,oldval) {

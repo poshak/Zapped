@@ -20,7 +20,7 @@
     <div style="clear: left">
     <form name="detailsformuser" class="col-md-8 col-md-offset-2 form-parent" style="padding: 20px;">
         <div style="display: inline-block;width: 100%;">
-            <input type="email" name="email" placeholder="Enter email" style="display: inline-block;margin: 0 !important;width: 80% !important;" ng-model="details.email" required>
+            <input type="email" name="email" placeholder="Enter email to view orders" style="display: inline-block;margin: 0 !important;width: 80% !important;" ng-model="details.email" required>
             <span ng-hide="detailsformuser.email.$error.email || detailsformuser.email.$error.required" ng-click="getDetails()" class="glyphicon glyphicon-circle-arrow-right" style="font-size: 200%;top: 10px;cursor: pointer"></span>
             <br>
             <span class="error-red" style="bottom: 2%;left: 50%;" ng-show="detailsformuser.email.$error.email">Not valid email!</span>

@@ -99,7 +99,7 @@ app.directive('imgLoad', ['$parse', function($parse) { // Inject $parse
   };
 }]);
 
-app.run(['$rootScope','webservices','$http','$templateCache', function($rootScope,webservices,$http,$templateCache) {
+app.run(['$rootScope','webservices','$http','$templateCache','$window','$location', function($rootScope,webservices,$http,$templateCache,$window,$location) {
 
   $(function() {
     FastClick.attach(document.body);
@@ -133,11 +133,16 @@ app.run(['$rootScope','webservices','$http','$templateCache', function($rootScop
   var key_arr =["Name",	"Category",	"Description",	"Place of Origin",	"Minimum quantity (in grams)",	"Price_per_Minimum_quantity",	"Total Stock",	"Items_Sold",	"Image"];
   var showNotification ;
 
-  $rootScope.$on('$locationChangeStart', function(event) {
-    $rootScope.root.counter = $rootScope.root.cart.length;
+  $rootScope.$on('$locationChangeSuccess', function(event){
+    ga('send', 'pageview', $location.path());
     scrollToID('main-container');
+    $rootScope.root.counter = $rootScope.root.cart.length;
     $rootScope.root.total = 0;
     $("#loginpage").css("display", "none");
+  });
+
+  $rootScope.$on('$locationChangeStart', function(event) {
+
   });
 
   Array.prototype.move = function (old_index, new_index) {

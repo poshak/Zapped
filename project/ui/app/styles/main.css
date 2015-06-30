@@ -378,6 +378,10 @@ input[type="text"].focus {
   color: #105cb6;
 }
 
+#confirmpage a{
+  text-align: center;
+  font-size: large;
+}
 
 .glyphicon-shopping-cart.rotate-class {
   transform: rotate(360deg);

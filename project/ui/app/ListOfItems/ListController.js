@@ -1,5 +1,8 @@
-app.controller('ListController',function($scope,$stateParams,webservices,$rootScope,$window,$filter){
+app.controller('ListController',function($scope,$stateParams,webservices,$rootScope,$window,$location){
 
+    $rootScope.$on('$routeChangeSuccess', function(event) {
+        $window.ga('send', 'pageview', { page: $location.url() });
+    });
  $scope.showObj = {};
 
   $scope.$watch('totalCount', function(newval, oldval){
@@ -11,6 +14,14 @@ app.controller('ListController',function($scope,$stateParams,webservices,$rootSc
       }
     }
   });
+
+    $scope.takeToList = function() {
+        $window.location.href = '#/list';
+
+        //scrollToID('main-container');
+        //$scope.searchObj.Category = '';
+        //$scope.root.header = '';
+    }
 
   $scope.onImageLoad = function(name){
     $scope.totalCount++;
@@ -24,6 +35,9 @@ app.controller('ListController',function($scope,$stateParams,webservices,$rootSc
     }
     if( $scope.root.header == 'dryfruit'){
         $scope.root.header = 'DRY FRUITS';
+    }
+    if( $scope.root.header == 'misc'){
+        $scope.root.header = 'Miscellaneous';
     }
 
   $scope.searchObj = {

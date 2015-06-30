@@ -1,4 +1,9 @@
 app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,$location,$rootScope){
+
+    $rootScope.$on('$routeChangeSuccess', function(event) {
+        $window.ga('send', 'pageview', { page: $location.url() });
+    });
+
     sessionStorage.setItem('cartObject', JSON.stringify($rootScope.root.cart));
     $rootScope.$watch('fb_name', function (newval,oldval) {
         if(!newval){
@@ -7,6 +12,8 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
             $('#loginpage').css("display", "none");
         }
     });
+
+    var orderConfirmed = false;
 
     $rootScope.$watch('fb_email', function (newval,oldval) {
         if(newval){
@@ -91,24 +98,46 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
 
     $window.publishResult = function (obj){
         $('#loadingicon').css('display','none');
-        $.unblockUI();
+
         if(obj.result == 'error'){
+            $.unblockUI();
             console.log(obj.error);
             alert('Special characters in the Address are not allowed. Please edit and try again');
         }
         if(obj.result == 'success'){
-            alert('Order placed ! Your order no. is '+obj['Order No.']+"\n"+"The order details have been sent to "+$rootScope.details.email +".\n"+
-            "Continue Shopping :)");
+            $('#confirm-page-data').html('Order placed ! Your order no. is '+obj['Order No.']+'<br>'+"The order details have been sent to "+$rootScope.details.email +".<br>"+"");
+            showCoupon('confirmpage');
+            $(document).on('click touchend', '#cs-div', function() {
+                closePop('confirmpage');
+                location.href = '#/list';
+            });
+            $(document).on('click touchend', '#vo-div', function() {
+                closePop('confirmpage');
+                location.href = '#/user';
+            });
+            $(document).on('click touchend', '#feedback-div', function() {
+                var win = window.open("http://goo.gl/forms/CD4JaaUkEl", '_blank');
+                win.focus();
+            });
+            orderConfirmed = true;
+            //$('#confirmpage').css('display','table');
+            //$.blockUI({
+            //    message: $('#confirmpage')
+            //});
+            //$.blockUI({ message: $('#confirmpage') });
+            //alert('Order placed ! Your order no. is '+obj['Order No.']+"\n"+"The order details have been sent to "+$rootScope.details.email +".\n"+
+            //"Continue Shopping :)");
             //var stri = 'Order placed ! Your order no. is '+obj['Order No.']+"\n"+"The order details have been sent to "+$rootScope.details.email +".\n"+
             //    "Continue Shopping :)";
             //$('#confirmorder-text').innerHTML = stri;
             //$.blockUI({message : $('#confirmorder')});
-
+            $scope.price = 0;
             $rootScope.root.cart = [];
             sessionStorage.setItem('cartObject', JSON.stringify($rootScope.root.cart));
-            $location.path('/list');
+            $location.path('/home');
         }
         if(obj.result == 'failed'){
+            $.unblockUI();
             var str = "Could not place order due to insufficient inventory.\n ---Details--- \n";
 
             for(var x in obj.resultJson){
@@ -138,6 +167,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
             return;
         }
         var postObj= $rootScope.details ;
+        orderConfirmed = false;
 
         //var url = "https://script.google.com/macros/s/AKfycbwm80x32nYqolLYBQatIzB9MfuA7XWAcUD9GdBUZZDLT3zr46g/exec?prefix=publishResult";
         var url = "https://script.google.com/macros/s/AKfycbx3fK0ojaoaKNEtMDvNrgkiqsBrYuPy5zCjvCDmluxR9pNe64uT/exec?prefix=publishResult&mmaction=order";
@@ -160,7 +190,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
             }
         }
         url = url + '&OrderDetails='+JSON.stringify(outputObj);
-        url = url + '&Amount='+applyDiscount(price);
+        url = url + '&Amount=Rs.'+$scope.price;
         url = url + '&DeliveryDate='+$scope.deliverydate.toDateString();
         if(price == 0){
             alert("Cart is Empty!");
@@ -170,6 +200,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
         }
         $.blockUI({ message: null });
         $('#loadingicon').css('display','block');
+        scrollToID('main-container');
         $.ajax({
             type:"GET",
             url: url,
@@ -183,7 +214,10 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
                 console.log(status + '; ' + error);
                 //alert('Something went wrong. Please try again.');
                 $('#loadingicon').css('display','none');
-                $.unblockUI();
+                if(!orderConfirmed){
+                    $.unblockUI();
+                }
+                //$.unblockUI();
             }
         });
     }

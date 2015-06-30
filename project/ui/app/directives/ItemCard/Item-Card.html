@@ -1,7 +1,7 @@
-<div class="col-md-4 item-card-class" style="position: relative">
+<div class="col-md-4 item-card-class" style="position: relative;">
     <div style="position: relative" ng-class="{'disable-div': (available == 0)}">
   <a href="#/item/{{name}}"><div class="thumbnail" style="position: relative">
-      <img style="max-height: 200px" src="{{image}}" alt="" img-load="onLoad(name)" ng-show="ImageLoaded">
+      <img style="max-height: 200px" ng-src="{{image}}" alt="" img-load="onLoad(name)" ng-show="ImageLoaded">
       <img style="max-height: 200px" src="/images/loading.gif" alt="" ng-show="!ImageLoaded">
       <div class="caption">
         <h4 class="overflow-class" title="{{name}}" style="margin: 0px;"><b>{{name}}</b></h4>
