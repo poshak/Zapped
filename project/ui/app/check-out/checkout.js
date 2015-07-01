@@ -1,4 +1,4 @@
-app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,$location,$rootScope){
+app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,$location,dataservice){
 
     $rootScope.$on('$routeChangeSuccess', function(event) {
         $window.ga('send', 'pageview', { page: $location.url() });
@@ -131,6 +131,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
             //    "Continue Shopping :)";
             //$('#confirmorder-text').innerHTML = stri;
             //$.blockUI({message : $('#confirmorder')});
+            dataservice.setDataToNull();
             $scope.price = 0;
             $rootScope.root.cart = [];
             sessionStorage.setItem('cartObject', JSON.stringify($rootScope.root.cart));

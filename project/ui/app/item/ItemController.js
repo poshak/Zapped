@@ -1,4 +1,6 @@
-app.controller('ItemCtrl',function($scope,$stateParams,webservices,$rootScope){
+app.controller('ItemCtrl',function($scope,$stateParams,dataservice,$rootScope){
+  $.blockUI({ message: null });
+  $('#loadingicon').css('display','block');
   var max_quantity = $rootScope.max_quantity ;
   $scope.parent = {};
 
@@ -26,7 +28,9 @@ app.controller('ItemCtrl',function($scope,$stateParams,webservices,$rootScope){
       $scope.disabledVal = true;
     }
   }
-  webservices.then(function(data){
+  dataservice.getData().then(function(data){
+    $.unblockUI();
+    $('#loadingicon').css('display','none');
     var data_arr = data.data;
     for(var x in data_arr){
       var obj = data_arr[x];

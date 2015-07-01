@@ -1,4 +1,4 @@
-app.controller('CartCtrl',function($scope,$stateParams,webservices,$rootScope,$location,$window){
+app.controller('CartCtrl',function($scope,$stateParams,dataservice,$rootScope,$location,$window){
     $rootScope.$on('$routeChangeSuccess', function(event) {
         $window.ga('send', 'pageview', { page: $location.url() });
     });

@@ -1,4 +1,7 @@
-app.controller('ListController',function($scope,$stateParams,webservices,$rootScope,$window,$location){
+app.controller('ListController',function($scope,$stateParams,$rootScope,$window,$location,dataservice){
+
+    $.blockUI({ message: null });
+    $('#loadingicon').css('display','block');
 
     $rootScope.$on('$routeChangeSuccess', function(event) {
         $window.ga('send', 'pageview', { page: $location.url() });
@@ -43,13 +46,16 @@ app.controller('ListController',function($scope,$stateParams,webservices,$rootSc
   $scope.searchObj = {
     'Category' : $stateParams.type
   }
-  webservices.then(function(data){
+
+    dataservice.getData().then(function(data){
     $scope.data = data.data;
     if($scope.data && $scope.data.constructor === Array){
       $scope.totalCount = 0;
     }else{
 
     }
+        $.unblockUI();
+        $('#loadingicon').css('display','none');
     console.log($scope.data);
   });
 

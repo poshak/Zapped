@@ -99,7 +99,7 @@ app.directive('imgLoad', ['$parse', function($parse) { // Inject $parse
   };
 }]);
 
-app.run(['$rootScope','webservices','$http','$templateCache','$window','$location', function($rootScope,webservices,$http,$templateCache,$window,$location) {
+app.run(['$rootScope','dataservice','$http','$templateCache','$window','$location', function($rootScope,dataservice,$http,$templateCache,$window,$location) {
 
   $(function() {
     FastClick.attach(document.body);
@@ -193,7 +193,7 @@ app.run(['$rootScope','webservices','$http','$templateCache','$window','$locatio
 
   var addToCardFunction = function(name, quantity){
 
-    webservices.then(function(data){
+    dataservice.getData().then(function(data){
       var main_data = data.data;
       var tmp_obj = {};
       var tmp_var = '';
