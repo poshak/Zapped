@@ -9,7 +9,8 @@ var app = angular
     //'ngTouch',
     //  'pascalprecht.translate'
   ]);
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
+  $locationProvider.html5Mode(true);
 //routing
 //  $httpProvider.defaults.useXDomain = true;
 //  $httpProvider.defaults.withCredentials = true;
