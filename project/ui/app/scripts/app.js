@@ -10,7 +10,6 @@ var app = angular
     //  'pascalprecht.translate'
   ]);
 app.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
-  $locationProvider.html5Mode(true);
 //routing
 //  $httpProvider.defaults.useXDomain = true;
 //  $httpProvider.defaults.withCredentials = true;
