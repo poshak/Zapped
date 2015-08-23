@@ -75,6 +75,11 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
             $scope.price *= (1-$rootScope.hideCoupon);
             $scope.price = Math.floor($scope.price);
             alert('Applied!\nNew price is : Rs.'+ $scope.price);
+        }else if($rootScope.root.coupon.toLowerCase() == 'smv10'){
+            $rootScope.hideCoupon = .1;
+            $scope.price *= (1-$rootScope.hideCoupon);
+            $scope.price = Math.floor($scope.price);
+            alert('Applied!\nNew price is : Rs.'+ $scope.price);
         }else{
             alert('Not a valid code');
             $rootScope.root.coupon = '';
@@ -83,11 +88,12 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
 
     $scope.areaArr = [
         'Garudacharpalya/BMP',
-        'Mahadevapura',
+        'Mahadevapura/HP STSD',
         'Mallespalya/Kaggadaspura',
         'Tippasandra/GM Palya',
         'Jeeva Bheema Nagar',
-        'IndiraNagar'
+        'IndiraNagar/Domlur',
+        'Koramanagala/Ejipura'
     ];
 
     //$rootScope.details.email = 'poshak@hp.com';

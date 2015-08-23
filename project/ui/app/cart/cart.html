@@ -3,7 +3,7 @@
   <div ng-show="root.cart && root.cart.length > 0" style="margin-bottom: 55px;">
 
     <div style="display: table;margin: auto;width: 100%">
-  <div  ng-repeat="item in root.cart" class="cart-div col-md-12" style="position: relative;padding: 0px;display: table;border: 1px solid black;border-radius: 10px;width: 100%;width: 98%;margin: 0 5px;margin-bottom: 10px;">
+  <div  ng-repeat="item in root.cart track by $index" class="cart-div col-md-12" style="position: relative;padding: 0px;display: table;border: 1px solid black;border-radius: 10px;width: 100%;width: 98%;margin: 0 5px;margin-bottom: 10px;">
     <cart-card name="{{item.Name}}"
                quantity="{{item['Minimum quantity (in grams)']}}"
                price="{{item['Price_per_Minimum_quantity']}}"
@@ -34,7 +34,7 @@
   </div>
   <h4 ng-hide="root.cart && root.cart.length > 0">No items in cart yet!
       <br>
-      <button class="btn btn-primary" style="padding: 5px;margin: 10px;border: 1px solid black;"><a style="color: white" ng-href="#/list">Continue Shopping</a></button></h4>
+      <button class="btn btn-primary" style="padding: 5px;margin: 10px;border: 1px solid black;"><a style="color: white" href="#/list">Continue Shopping</a></button></h4>
     <br></h4>
   <br>
 

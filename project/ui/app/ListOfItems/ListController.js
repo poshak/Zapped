@@ -67,8 +67,8 @@ app.controller('ListController',function($scope,$stateParams,$rootScope,$window,
     {name:'Price : High to Low',id: '4'}
   ]
 
-  if(localStorage.getItem("selected")){
-    $scope.selected = $scope.orderByaRR[parseInt(localStorage.getItem("selected"))].id;
+  if(sessionStorage.getItem("selected")){
+    $scope.selected = $scope.orderByaRR[parseInt(sessionStorage.getItem("selected"))].id;
   }else {
     $scope.selected = $scope.orderByaRR[0].id;
   }
@@ -89,7 +89,7 @@ app.controller('ListController',function($scope,$stateParams,$rootScope,$window,
     if(newval == 4){
       $scope.orderByObj =  '-Price_per_Minimum_quantity';
     }
-    localStorage.setItem("selected", newval);
+      sessionStorage.setItem("selected", newval);
   });
 
   //var unblockUI = function (){

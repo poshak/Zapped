@@ -12,7 +12,7 @@
   <!--<div id="main-img-div" ng-repeat="item in root.filteredItems = data| filter : searchObj |  orderBy: orderByObj | as:this:'filteredItems'">-->
   <div ng-repeat="item in filteredData = (data | filter:searchObj|  orderBy: orderByObj )" ng-if="item['Price_per_Minimum_quantity'] != 'xxx'">
     <item-card style="position: relative"
-      image="/images/items/{{item.Name}}.jpg"
+      image="/images/items/{{item.Name.split('(')[0]}}.jpg"
       name="{{item.Name}}"
       description="{{item.Description}}"
       price="{{item['Price_per_Minimum_quantity']}}"
