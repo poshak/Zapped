@@ -89,11 +89,13 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
     $scope.areaArr = [
         'Garudacharpalya/BMP',
         'Mahadevapura/HP STSD',
+        'Whitefield',
         'Mallespalya/Kaggadaspura',
         'Tippasandra/GM Palya',
-        'Jeeva Bheema Nagar',
         'IndiraNagar/Domlur',
-        'Koramanagala/Ejipura'
+        'Koramanagala/Ejipura',
+        'Jayanagar/JPNagar/BTM Layout'
+
     ];
 
     //$rootScope.details.email = 'poshak@hp.com';

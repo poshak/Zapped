@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eddbe608-8c96-447c-839c-5975d450b6e5" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\.picasaoriginals\background (2).JPG" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\items\IMG_3156 (1).jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\maheshpo\Google Drive\Zapped\project\ui\app\images\items\IMG_3156.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/background (2).JPG" afterPath="$PROJECT_DIR$/images/background (2).JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/.picasa.ini" afterPath="$PROJECT_DIR$/images/.picasa.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/.picasaoriginals/.picasa.ini" afterPath="$PROJECT_DIR$/images/.picasaoriginals/.picasa.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/CartItemCard/CartItemCard.html" afterPath="$PROJECT_DIR$/directives/CartItemCard/CartItemCard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListOfItems/ListController.js" afterPath="$PROJECT_DIR$/ListOfItems/ListController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cart/cart.html" afterPath="$PROJECT_DIR$/cart/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check-out/check-out.html" afterPath="$PROJECT_DIR$/check-out/check-out.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check-out/checkout.js" afterPath="$PROJECT_DIR$/check-out/checkout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/home.html" afterPath="$PROJECT_DIR$/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/item/item.html" afterPath="$PROJECT_DIR$/item/item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListOfItems/list.html" afterPath="$PROJECT_DIR$/ListOfItems/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main.css" afterPath="$PROJECT_DIR$/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -42,7 +27,7 @@
       <file leaf-file-name="ListController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListOfItems/ListController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6">
+            <state vertical-scroll-proportion="0.0">
               <caret line="49" column="46" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="46" />
               <folding />
             </state>
@@ -52,17 +37,17 @@
       <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListOfItems/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5384617">
+            <state vertical-scroll-proportion="0.0">
               <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
+            <state vertical-scroll-proportion="-9.961538">
               <caret line="135" column="27" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -93,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check-out/checkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.4021025">
+              <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -106,7 +91,7 @@
       <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cart/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
@@ -119,7 +104,7 @@
       <file leaf-file-name="Item-Card.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/directives/ItemCard/Item-Card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="109" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -143,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/dist/built.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2124" column="14" selection-start-line="2124" selection-start-column="14" selection-end-line="2124" selection-end-column="14" />
+              <caret line="2125" column="0" selection-start-line="2125" selection-start-column="0" selection-end-line="2125" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -152,7 +137,7 @@
       <file leaf-file-name="CartItemCard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/directives/CartItemCard/CartItemCard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="110" selection-start-line="3" selection-start-column="110" selection-end-line="3" selection-end-column="110" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -212,11 +197,11 @@
         <option value="$PROJECT_DIR$/styles/main.css" />
         <option value="$PROJECT_DIR$/check-out/check-out.html" />
         <option value="$PROJECT_DIR$/ListOfItems/ListController.js" />
-        <option value="$PROJECT_DIR$/check-out/checkout.js" />
         <option value="$PROJECT_DIR$/scripts/app.js" />
         <option value="$PROJECT_DIR$/directives/CartItemCard/CartItemCard.html" />
         <option value="$PROJECT_DIR$/cart/cart.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/check-out/checkout.js" />
       </list>
     </option>
   </component>
@@ -231,7 +216,7 @@
     <option name="x" value="75" />
     <option name="y" value="-9" />
     <option name="width" value="1534" />
-    <option name="height" value="918" />
+    <option name="height" value="912" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -256,8 +241,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -430,10 +413,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Codebase/vPV/2.10/ovpm8/PVUI/GC/project/Perf-Web/web/html/ui" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="FullScreen" value="false" />
@@ -493,7 +478,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="-9" width="1534" height="918" extended-state="0" />
+    <frame x="75" y="-9" width="1534" height="912" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1378628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -787,10 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#3;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="444" column="1" selection-start-line="444" selection-start-column="1" selection-end-line="444" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,9 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
-          <folding>
-            <marker date="1436419088693" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,17 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="47" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/check-out/checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,13 +800,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13298565">
           <caret line="11291" column="6" selection-start-line="11291" selection-start-column="6" selection-end-line="11291" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/directives/ItemCard/Item-Card.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="109" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -851,7 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ListOfItems/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5384617">
+        <state vertical-scroll-proportion="0.0">
           <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding />
         </state>
@@ -859,7 +824,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ListOfItems/ListController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6">
+        <state vertical-scroll-proportion="0.0">
           <caret line="49" column="46" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="46" />
           <folding />
         </state>
@@ -873,25 +838,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="241" column="15" selection-start-line="241" selection-start-column="15" selection-end-line="241" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/built.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2124" column="14" selection-start-line="2124" selection-start-column="14" selection-end-line="2124" selection-end-column="14" />
+          <caret line="2125" column="0" selection-start-line="2125" selection-start-column="0" selection-end-line="2125" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/directives/CartItemCard/CartItemCard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="110" selection-start-line="3" selection-start-column="110" selection-end-line="3" selection-end-column="110" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -902,7 +859,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#button#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
@@ -913,7 +870,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="-9.961538">
           <caret line="135" column="27" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -940,6 +897,22 @@
             <marker date="1440351651852" expanded="true" signature="8298:8363" placeholder="..." />
             <marker date="1440351651852" expanded="true" signature="8316:8355" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="241" column="15" selection-start-line="241" selection-start-column="15" selection-end-line="241" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check-out/checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4021025">
+          <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
