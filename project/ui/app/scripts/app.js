@@ -24,6 +24,20 @@ app.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
       });
 
   $stateProvider
+    .state('giftbox', {
+      url: '/giftbox',
+      templateUrl: 'giftbox/giftbox.html',
+      controller : 'GiftBoxCtrl'
+    });
+
+  $stateProvider
+    .state('giftboxID', {
+      url: '/giftbox/:id/:count',
+      templateUrl: 'giftbox/giftbox.html',
+      controller : 'GiftBoxCtrl'
+    });
+
+  $stateProvider
     .state('list', {
       url: '/list?type',
       templateUrl: 'ListOfItems/list.html',
@@ -231,8 +245,28 @@ app.run(['$rootScope','dataservice','$http','$templateCache','$window','$locatio
   }
 
   var existsInCardFunction = function(name){
-    jQuery('#growl-id').html( "'" +name + "'"+ " is already in the cart.<br> In order to change the quantity, click on the cart. ");
+    jQuery('#growl-id').html( "'" +name + "'"+ " is already in the cart.<br> In order to change the quantity, go to cart. ");
     showNotification();
+  }
+
+  $rootScope.addGiftBoxToCart = function(obj){
+
+    $rootScope.root.cart.push(obj);
+    $rootScope.saveToLocalStorage();
+    sessionStorage.setItem('giftBoxObject', obj.giftBoxObject);
+
+
+    jQuery('#growl-id').html('Added '+obj.Quantity+' boxes of '+obj.Name+' to cart');
+    jQuery('.glyphicon-shopping-cart').addClass('rotate-class');
+    showNotification();
+    setTimeout(function () {
+      jQuery('.glyphicon-shopping-cart').removeClass('rotate-class');
+      $location.path('/giftbox/'+obj.id+'/'+obj.Quantity);
+      $rootScope.$apply();
+    }, 1000);
+
+
+
   }
 
   $rootScope.addToCart = function(name, quantity){

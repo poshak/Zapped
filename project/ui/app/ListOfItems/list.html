@@ -46,11 +46,14 @@
     <br>
     Watch out for this space!
   </div>
-  <div style="margin: 0 auto;display: table;">
-
-    <button style="padding: 10px 40px;" ng-click="takeToList()" class="btn btn-primary">Show All Products</button>
-
-  </div>
-  <hr style="margin-bottom: 0px">
 </div>
+<div class="col-md-12">
+<div style="margin: 0 auto;display: table;">
+
+  <button ng-show="root.header" style="padding: 10px;margin: 2px;" ng-click="takeToList()" class="btn btn-primary">Show All Products</button>
+  <button style="padding: 10px;margin: 2px;" ng-click="takeToGiftBox()" class="btn btn-primary">Make a gift box</button>
+
+</div>
+</div>
+<hr style="margin-bottom: 0px">
 

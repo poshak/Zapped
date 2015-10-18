@@ -9,10 +9,16 @@
     <file url="file://$PROJECT_DIR$/app/about/about.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/cart/CartCtrl.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/cart/cart.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/check-out/check-out.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/check-out/checkout.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/directives/CartItemCard/CartItemCard.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/directives/CartItemCard/CartItemCardDirective.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/directives/FlipCard/Flip-Card.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/directives/FlipCard/FlipCardDirective.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/directives/ItemCard/Item-Card.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/directives/ItemCard/ItemCardDirective.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/giftbox/giftbox.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/giftbox/giftbox.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/home/HomeCtrl.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/home/home.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/item/ItemController.js" charset="UTF-8" />
@@ -20,5 +26,6 @@
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/services/services.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bower_components/bootstrap/dist/css/bootstrap.css" charset="UTF-8" />
   </component>
 </project>

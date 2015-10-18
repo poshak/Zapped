@@ -9,7 +9,11 @@ app.directive('cartCard',function($location,$timeout,$rootScope){
             price: '@',
             quantity : '@',
             count : '=',
-            maxCount : '@'
+            maxCount : '@',
+          category : '@',
+          giftBoxObject : '@',
+          id : '@',
+          description : '@'
             //recalculate: '&recalculate'
         },
         link: function(scope, element, attrs) {
@@ -47,7 +51,15 @@ app.directive('cartCard',function($location,$timeout,$rootScope){
                 }
 
             }
+          scope.navigateToGiftBox = function(){
+            sessionStorage.setItem('giftBoxObject', scope.giftBoxObject);
+            var navURL = '/giftbox/'+scope.id+'/'+scope.count;
+            $location.path(navURL);
+          }
 
+          scope.showInfo = function(){
+            alert(scope.description);
+          }
 
         }
     };

@@ -468,6 +468,13 @@ div.growlUI h1, div.growlUI h2 {
     max-width: 730px;
   }
 
+  #moveleft{
+    display: none!important;
+  }
+
+  #moveright{
+    display: none!important;
+  }
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -536,4 +543,52 @@ div.growlUI h1, div.growlUI h2 {
   .squeeze-text{
     font-size: 110%!important;
   }
+}
+
+.box-selected-cls{
+  background-color: #ddd;
+  text-decoration: none;
+  outline: 0;
+  /*width: 100% !important;*/
+  /*height: auto !important;;*/
+}
+
+.gift-box-cls{
+  height: 100%;
+  width: 230px;
+  padding: 10px;
+}
+
+.span-white-color{
+  /*color: white;*/
+}
+
+.box-not-selected-cls{
+  opacity: .5;
+}
+
+.df-list-item{
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+.numberCircle {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border: 2px solid #666;
+  color: #666;
+  text-align: center;
+
+  font: 20px Arial, sans-serif;
+}
+
+.red-color-class{
+  color: red !important;
+  font-style: oblique;
+}
+
+.red-color-border-class{
+  border: 1px solid red;
 }

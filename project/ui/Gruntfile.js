@@ -1,6 +1,10 @@
 module.exports = function (grunt) {
 	
 	grunt.initConfig({
+		server: {
+			port: 8080,
+			base: './web-root'
+		  },
 	  concat: {
 		js: {
 		  src: [
@@ -10,7 +14,9 @@ module.exports = function (grunt) {
 		  ,'app/scripts/iphone-zoom.js'
 		  ,'app/scripts/google-spreadsheet.js'
 		  ,'app/services/services.js'
-		  ,'app/home/HomeCtrl.js','app/ListOfItems/ListController.js'
+		  ,'app/home/HomeCtrl.js'
+		  ,'app/giftbox/giftbox.js'
+		  ,'app/ListOfItems/ListController.js'
 		  ,'app/item/ItemController.js'
 		  ,'app/cart/CartCtrl.js'
 		  ,'app/check-out/checkout.js'
@@ -82,5 +88,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.registerTask('default',['concat','uglify','cssmin'])	;
+	grunt.loadNpmTasks('grunt-serve');
+	grunt.registerTask('server', 'Start a custom web server.', function() {
+	  grunt.log.writeln('Starting web server on port 1234.');
+	  require('server.js').listen(1234);
+	});
 		
 };

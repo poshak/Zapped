@@ -87,6 +87,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
     }
 
     $scope.areaArr = [
+        'Bangalore',
         'Garudacharpalya/BMP',
         'Mahadevapura/HP STSD',
         'Whitefield',
@@ -104,6 +105,7 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
     //$rootScope.details.address = 'poshak@hp.com';
     //$rootScope.details.area = $scope.areaArr[2];
 
+  $rootScope.details.area = $scope.areaArr[0];
 
     $window.publishResult = function (obj){
         $('#loadingicon').css('display','none');
@@ -193,9 +195,14 @@ app.controller('checkout',function($scope,$stateParams,$rootScope,$http,$window,
             var obj = $rootScope.root.cart[x];
 
             if(obj && obj.Name && obj.Quantity) {
-                var tmp = {};
+              var tmp = {};
+              if(obj.Category == 'giftbox'){
+                tmp[obj.Name+'['+obj.Description+']'] = obj.Quantity;
+                tmp['size'] = obj.size;
+              }else{
                 tmp[obj.Name] = obj.Quantity;
-                outputObj.push(tmp);
+              }
+              outputObj.push(tmp);
                 price = price + (obj.Price_per_Minimum_quantity * obj.Quantity);
             }
         }

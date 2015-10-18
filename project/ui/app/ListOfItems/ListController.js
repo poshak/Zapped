@@ -18,6 +18,9 @@ app.controller('ListController',function($scope,$stateParams,$rootScope,$window,
     }
   });
 
+  $scope.takeToGiftBox = function() {
+    $window.location.href = '#/giftbox';
+  }
     $scope.takeToList = function() {
         $window.location.href = '#/list';
 
@@ -65,7 +68,7 @@ app.controller('ListController',function($scope,$stateParams,$rootScope,$window,
     {name:'Name : Z to A',id: '2'},
     {name:'Price : Low to High',id: '3'},
     {name:'Price : High to Low',id: '4'}
-  ]
+  ];
 
   if(sessionStorage.getItem("selected")){
     $scope.selected = $scope.orderByaRR[parseInt(sessionStorage.getItem("selected"))].id;

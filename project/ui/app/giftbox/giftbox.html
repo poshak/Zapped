@@ -1,0 +1,182 @@
+<div>
+<h3 style="    margin: 0;">
+  DryFruit Gift box
+</h3>
+  <h5>
+    Choose your own box and dry fruits for a perfect gift
+  </h5>
+  <div>
+    <div id="accordion" class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="panel1" style="cursor: pointer">
+          <h4 class="panel-title">
+            <b data-toggle="collapse" data-parent="#accordion">Step 1 : Select a box</b> <span ng-if="(index || index == 0)"> :
+            <span style="padding: 0 10px;color: blue;font-weight: bold">{{boxArr[index].displayname}}</span></span>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in " style="min-height: 350px;position: relative;">
+          <div class="panel-body carousel" style="display: flex;overflow: hidden;">
+          <div ng-repeat="x in boxArr" style="display: inline-block;cursor: pointer" class="item-carousel"  >
+            <div id="carousel-example-generic-{{x.id}}" ng-class="{'box-selected-cls':index == $index }" class="carousel slide gift-box-cls" data-ride="carousel" >
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic-{{x.id}}" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic-{{x.id}}" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic-{{x.id}}" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox" ng-class="{'box-not-selected-cls':((index || index == 0) && index != $index) }">
+                <div class="item active">
+                  <a href="/images/boxes/{{x.id}}-1.jpg" target="_blank" style="position: absolute;top: 0px;right: 0px;font-size: 20px;color: white">
+                    <span class="glyphicon glyphicon-resize-full"></span>
+                  </a>
+                  <img ng-click="selectBox($index)" src="images/boxes/{{x.id}}-1.jpg" alt="..."></a>
+                  <div class="carousel-caption" ng-click="selectBox($index)">
+                    ...
+                  </div>
+                </div>
+                <div class="item">
+                  <a href="/images/boxes/{{x.id}}-2.jpg" target="_blank" style="position: absolute;top: 0px;right: 0px;font-size: 20px;color: white;">
+                    <span class="glyphicon glyphicon-resize-full"></span>
+                  </a>
+                  <img ng-click="selectBox($index)" src="images/boxes/{{x.id}}-2.jpg" alt="...">
+                  <div class="carousel-caption" ng-click="selectBox($index)">
+                    ...
+                  </div>
+                </div>
+                <div class="item">
+                  <a href="/images/boxes/{{x.id}}-3.jpg" target="_blank" style="position: absolute;top: 0px;right: 0px;font-size: 20px;color: white;">
+                    <span class="glyphicon glyphicon-resize-full"></span>
+                  </a>
+                  <img ng-click="selectBox($index)" src="images/boxes/{{x.id}}-3.jpg" alt="...">
+                  <div class="carousel-caption" ng-click="selectBox($index)">
+                    ...
+                  </div>
+                </div>
+              </div>
+              <div ng-click="selectBox($index)" style="text-align: center;"><b ng-class="{'span-white-color':index == $index}">{{x.displayname}}</b></div>
+            </div>
+          </div>
+
+  <span class="left carousel-control" id="moveleft" role="button" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+  </span>
+  <span class="right carousel-control" id="moveright" role="button" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+  </span>
+            </div>
+          <div style="clear: left;float: left;width: 100%;text-align: center;;position: relative">
+              <span style="text-align: center;font-size: large;color: white; background-color: grey; padding: 5px;" ng-if="!(index || index == 0)">
+                No box selected. Click/Tap to select.
+              </span>
+            <div ng-if="(index || index == 0)" style="width: 100%;display: table;    border: 2px solid grey;border-color: #ddd;">
+
+
+            <!--<div style="float: left;display: inline-block;width: 20%;background-color: #ddd;;border-right: 1px solid grey"><div style=";clear: left">Name </div></div>-->
+            <div style="float: left;display: inline-block;width: 30%;background-color: #ddd;border-right: 1px solid grey"><div style=";clear: left">Price(Empty)</div></div>
+            <div style="float: left;display: inline-block;width: 25%;background-color: #ddd;border-right: 1px solid grey"><div style=";clear: left">Capacity</div> </div>
+            <div style="float: left;display: inline-block;width: 45%;background-color: #ddd"><div style=";clear: left">Dimensions</div></div>
+          </div>
+            <div ng-if="(index || index == 0)" style="width: 100%;display: table;border: 2px solid lightgray;
+    border-top: 0;">
+
+
+              <!--<div style="float: left;display: inline-block;width: 20%;border-right: 1px solid grey"><div>{{boxArr[index].displayname}}</div></div>-->
+              <div style="float: left;display: inline-block;width: 30%;border-right: 1px solid grey"><div>Rs.{{boxArr[index].price}}</div></div>
+              <div style="float: left;display: inline-block;width: 25%;border-right: 1px solid grey"><div>{{boxArr[index].numcolumns}}x{{boxArr[index].columncapacity}}gms</div></div>
+              <div style="float: left;display: inline-block;width: 45%"><div>{{boxArr[index].dimensions}}</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" id="panel2" style="cursor: pointer">
+          <h4 class="panel-title">
+            <b data-toggle="collapse" data-parent="#accordion">Step 2 : Add dry fruits</b>
+            <span ng-if="(index || index == 0)"> :
+              <span style="padding: 0 10px;color: blue;font-weight: bold" ng-class="{'red-color-border-class':count != boxArr[index].numcolumns}">
+                <span ng-class="{'red-color-class':count != boxArr[index].numcolumns}" style="color: blue">{{count}}</span>&nbsp;/&nbsp;{{boxArr[index].numcolumns}} added
+              </span>
+            </span>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div>
+              <div>
+                <div style="float: left;padding:1px;">
+                  Price/box: <b>Rs.{{totalprice}}</b></div>
+                </div>
+              <div style="float: right;padding:1px;">
+                No. of boxes:
+                <div class="dropdown" style="display: inline-block" ng-hide="addedToCart">
+                <select  ng-options="countObj as countObj for countObj in numCountArr" ng-model="numboxes"></select>
+                </div>
+                <div ng-if="addedToCart" style="display: inline-block">{{numboxes}}</div>
+              </div>
+            </div>
+              <!--<div>-->
+                <!--<div style="float: left;margin-left: 10px;margin-bottom: 10px;">Sort by :-->
+                  <!--<div class="dropdown">-->
+                    <!--<select  ng-options="item.id as item.name for item in orderByaRR" ng-model="selected"></select>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<input class="inputText" style="float: right;margin: 5px 0px;margin-right: 10px;" placeholder="Search" type="text" ng-model="searchObj.Name"/>-->
+              <!--</div>-->
+              <br style="clear: both">
+              <div class="df-list-item"  ng-repeat="item in filteredData = (data | filter:searchObj|  orderBy: orderByObj )" ng-if="item['Price_per_Minimum_quantity'] != 'xxx' && item['Category'] == 'dryfruit'">
+                <div style="width: 45%;display: inline-block">
+                  <a href="#/item/{{item.Name}}" target="_blank">{{item.Name}}</a>
+                </div>
+                <div style="width: 30%;display: inline-block">
+                  Rs.{{getCalculatedVal(item['Price_per_Minimum_quantity'],boxArr[index].columncapacity,item['Minimum quantity (in grams)'],item.Name)}} / {{boxArr[index].columncapacity}} gms
+                </div>
+                <div style="float:right;display: inline-block">
+                  <span class="glyphicon glyphicon-minus" style="display: inline-block;cursor:pointer;font-size: large;" ng-click="subCount(item.Name)"></span>
+                  <div ng-if="itemCountArr[item.Name].count" style="display: inline-block;color: blue" class="numberCircle">{{itemCountArr[item.Name].count}}</div>
+                  <div ng-if="!itemCountArr[item.Name].count" style="display: inline-block" class="numberCircle">0</div>
+                  <span class="glyphicon glyphicon-plus" style="display: inline-block;cursor:pointer;font-size: large;" ng-click="addCount(item.Name)"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  <div class="bottom-buttons" style="width: 48%;" ng-hide="count != boxArr[index].numcolumns" >
+    <button ng-if="!addedToCart" class="btn btn-primary" style="width: 100%;margin: 0px;margin-right: 2px;border: 1px solid black;"
+            ng-click="addGiftToCart()">
+      <span >
+        Total : Rs.{{numboxes*totalprice}} <br><span style="font-size: large">Add to cart</span>
+      </span>
+
+      <!--<span ng-if="addedToCart">-->
+        <!--Added to cart!<br>-->
+        <!--In order to change the quantity, go to cart.-->
+      <!--</span>-->
+
+    </button>
+
+    <button ng-if="addedToCart" class="btn btn-primary"
+            style="width: 48.5%;margin: 0px;margin-right: 2px;border: 1px solid black;;display: inline-block;padding: 12px 0" ng-click="takeToBox()">
+      <span >
+        Create a new box
+      </span>
+    </button>
+    <button ng-if="addedToCart" class="btn btn-primary"
+            style="width: 48.5%;margin: 0px;margin-right: 2px;border: 1px solid black;display: inline-block;padding: 12px 0" ng-click="takeToCart()">
+      <span >
+        Go to cart
+      </span>
+    </button>
+
+  </div>
+
+
+  </div>
+

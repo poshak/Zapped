@@ -11,5 +11,9 @@ app.controller('HomeCtrl',function($scope,$location,$window,$rootScope){
         $location.path('/list');
     }
 
+  $scope.takeToGiftBox = function() {
+    $window.location.href = '#/giftbox';
+  }
+
     scrollToID('main-container');
 });
